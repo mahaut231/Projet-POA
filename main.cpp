@@ -1,9 +1,17 @@
 #include "mainwindow.h"
 #include "login.h"
 #include <QApplication>
-
+#include "turbine.h"
 int main(int argc, char *argv[])
 {
+
+
+    turbine t1(1, 5000, false, "2020-03-15", 8000, 2000);
+    t1.afficherInfos();
+    t1.activer();
+    t1.afficherInfos();
+
+    return 0;
     QApplication a(argc, argv);
 
     // Créer la fenêtre de login
