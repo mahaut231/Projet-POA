@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'login.ui'
+** Form generated from reading UI file 'Login.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.10.0
 **
@@ -18,56 +18,56 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_login
+class Ui_Login
 {
 public:
     QLineEdit *idText;
     QLineEdit *passwordText;
     QLabel *label;
     QLabel *label_2;
-    QPushButton *loginButton;
+    QPushButton *LoginButton;
 
-    void setupUi(QDialog *login)
+    void setupUi(QDialog *Login)
     {
-        if (login->objectName().isEmpty())
-            login->setObjectName("login");
-        login->resize(400, 300);
-        idText = new QLineEdit(login);
+        if (Login->objectName().isEmpty())
+            Login->setObjectName("Login");
+        Login->resize(400, 300);
+        idText = new QLineEdit(Login);
         idText->setObjectName("idText");
         idText->setGeometry(QRect(30, 70, 331, 21));
-        passwordText = new QLineEdit(login);
+        passwordText = new QLineEdit(Login);
         passwordText->setObjectName("passwordText");
         passwordText->setGeometry(QRect(30, 170, 331, 21));
         passwordText->setEchoMode(QLineEdit::EchoMode::Password);
-        label = new QLabel(login);
+        label = new QLabel(Login);
         label->setObjectName("label");
         label->setGeometry(QRect(30, 50, 71, 16));
-        label_2 = new QLabel(login);
+        label_2 = new QLabel(Login);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(30, 150, 131, 16));
-        loginButton = new QPushButton(login);
-        loginButton->setObjectName("loginButton");
-        loginButton->setGeometry(QRect(140, 220, 100, 32));
+        LoginButton = new QPushButton(Login);
+        LoginButton->setObjectName("LoginButton");
+        LoginButton->setGeometry(QRect(140, 220, 100, 32));
 
-        retranslateUi(login);
+        retranslateUi(Login);
 
-        QMetaObject::connectSlotsByName(login);
+        QMetaObject::connectSlotsByName(Login);
     } // setupUi
 
-    void retranslateUi(QDialog *login)
+    void retranslateUi(QDialog *Login)
     {
-        login->setWindowTitle(QCoreApplication::translate("login", "Dialog", nullptr));
-        idText->setText(QCoreApplication::translate("login", "jgpygg", nullptr));
-        passwordText->setText(QCoreApplication::translate("login", "oiigo", nullptr));
-        label->setText(QCoreApplication::translate("login", "Identifiant", nullptr));
-        label_2->setText(QCoreApplication::translate("login", "Mot de passe", nullptr));
-        loginButton->setText(QCoreApplication::translate("login", "Se connecter", nullptr));
+        Login->setWindowTitle(QCoreApplication::translate("Login", "Dialog", nullptr));
+        idText->setText(QCoreApplication::translate("Login", "jgpygg", nullptr));
+        passwordText->setText(QCoreApplication::translate("Login", "oiigo", nullptr));
+        label->setText(QCoreApplication::translate("Login", "Identifiant", nullptr));
+        label_2->setText(QCoreApplication::translate("Login", "Mot de passe", nullptr));
+        LoginButton->setText(QCoreApplication::translate("Login", "Se connecter", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class login: public Ui_login {};
+    class Login: public Ui_Login {};
 } // namespace Ui
 
 QT_END_NAMESPACE

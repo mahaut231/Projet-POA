@@ -560,19 +560,25 @@ App_PPOA_autogen/timestamp: \
 	C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
 	C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/CMakeLists.txt \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Capteur.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Capteur.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Centrale.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Centrale.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Login.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Login.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Mainwindow.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Mainwindow.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Reservoire.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Reservoire.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Turbine.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Turbine.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qtc/package-manager/maintenance_tool_provider.cmake \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/App_PPOA_autogen/moc_predefs.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/login.cpp \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/login.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/main.cpp \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/mainwindow.cpp \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/mainwindow.h \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/turbine.cpp \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/turbine.h \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/login.ui \
-	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/mainwindow.ui \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Login.ui \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
