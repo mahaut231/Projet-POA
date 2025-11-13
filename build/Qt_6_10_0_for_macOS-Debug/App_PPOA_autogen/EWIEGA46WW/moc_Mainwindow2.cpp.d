@@ -1,4 +1,4 @@
-/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/EWIEGA46WW/moc_Login.cpp: /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Login.h \
+/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/EWIEGA46WW/moc_Mainwindow2.cpp: /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow2.h \
   /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/moc_predefs.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
@@ -725,8 +725,6 @@
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h \
-  /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/utilisateur.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QString \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q17memory.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20iterator.h \
@@ -879,9 +877,10 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qdialog.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h \
