@@ -65,17 +65,57 @@ build CMakeFiles/App_PPOA.dir/main.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug
   OBJECT_DIR = CMakeFiles/App_PPOA.dir
   OBJECT_FILE_DIR = CMakeFiles/App_PPOA.dir
 
-build CMakeFiles/App_PPOA.dir/mainwindow.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/mainwindow.cpp || cmake_object_order_depends_target_App_PPOA
+build CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow.cpp || cmake_object_order_depends_target_App_PPOA
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/App_PPOA.dir/mainwindow.cpp.o.d
+  DEP_FILE = CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6 -fcolor-diagnostics
   INCLUDES = -I"/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/include" -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Headers -iframework /Users/mahautgalice/Qt/6.10.0/macos/lib -isystem /Users/mahautgalice/Qt/6.10.0/macos/mkspecs/macx-clang -isystem /Users/mahautgalice/Qt/6.10.0/macos/include -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Headers
   OBJECT_DIR = CMakeFiles/App_PPOA.dir
   OBJECT_FILE_DIR = CMakeFiles/App_PPOA.dir
 
-build CMakeFiles/App_PPOA.dir/login.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/login.cpp || cmake_object_order_depends_target_App_PPOA
+build CMakeFiles/App_PPOA.dir/Login.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/Login.cpp || cmake_object_order_depends_target_App_PPOA
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/App_PPOA.dir/login.cpp.o.d
+  DEP_FILE = CMakeFiles/App_PPOA.dir/Login.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6 -fcolor-diagnostics
+  INCLUDES = -I"/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/include" -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Headers -iframework /Users/mahautgalice/Qt/6.10.0/macos/lib -isystem /Users/mahautgalice/Qt/6.10.0/macos/mkspecs/macx-clang -isystem /Users/mahautgalice/Qt/6.10.0/macos/include -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Headers
+  OBJECT_DIR = CMakeFiles/App_PPOA.dir
+  OBJECT_FILE_DIR = CMakeFiles/App_PPOA.dir
+
+build CMakeFiles/App_PPOA.dir/Turbine.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/Turbine.cpp || cmake_object_order_depends_target_App_PPOA
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/App_PPOA.dir/Turbine.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6 -fcolor-diagnostics
+  INCLUDES = -I"/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/include" -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Headers -iframework /Users/mahautgalice/Qt/6.10.0/macos/lib -isystem /Users/mahautgalice/Qt/6.10.0/macos/mkspecs/macx-clang -isystem /Users/mahautgalice/Qt/6.10.0/macos/include -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Headers
+  OBJECT_DIR = CMakeFiles/App_PPOA.dir
+  OBJECT_FILE_DIR = CMakeFiles/App_PPOA.dir
+
+build CMakeFiles/App_PPOA.dir/Capteur.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/Capteur.cpp || cmake_object_order_depends_target_App_PPOA
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/App_PPOA.dir/Capteur.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6 -fcolor-diagnostics
+  INCLUDES = -I"/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/include" -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Headers -iframework /Users/mahautgalice/Qt/6.10.0/macos/lib -isystem /Users/mahautgalice/Qt/6.10.0/macos/mkspecs/macx-clang -isystem /Users/mahautgalice/Qt/6.10.0/macos/include -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Headers
+  OBJECT_DIR = CMakeFiles/App_PPOA.dir
+  OBJECT_FILE_DIR = CMakeFiles/App_PPOA.dir
+
+build CMakeFiles/App_PPOA.dir/Reservoire.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/Reservoire.cpp || cmake_object_order_depends_target_App_PPOA
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/App_PPOA.dir/Reservoire.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6 -fcolor-diagnostics
+  INCLUDES = -I"/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/include" -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Headers -iframework /Users/mahautgalice/Qt/6.10.0/macos/lib -isystem /Users/mahautgalice/Qt/6.10.0/macos/mkspecs/macx-clang -isystem /Users/mahautgalice/Qt/6.10.0/macos/include -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Headers
+  OBJECT_DIR = CMakeFiles/App_PPOA.dir
+  OBJECT_FILE_DIR = CMakeFiles/App_PPOA.dir
+
+build CMakeFiles/App_PPOA.dir/Centrale.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/Centrale.cpp || cmake_object_order_depends_target_App_PPOA
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/App_PPOA.dir/Centrale.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6 -fcolor-diagnostics
+  INCLUDES = -I"/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/include" -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Headers -iframework /Users/mahautgalice/Qt/6.10.0/macos/lib -isystem /Users/mahautgalice/Qt/6.10.0/macos/mkspecs/macx-clang -isystem /Users/mahautgalice/Qt/6.10.0/macos/include -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Headers
+  OBJECT_DIR = CMakeFiles/App_PPOA.dir
+  OBJECT_FILE_DIR = CMakeFiles/App_PPOA.dir
+
+build CMakeFiles/App_PPOA.dir/Utilisateur.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debug /Users/mahautgalice/Desktop/Cours$ UQAC/S1/POO/ProjetFinal/App_PPOA/Utilisateur.cpp || cmake_object_order_depends_target_App_PPOA
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/App_PPOA.dir/Utilisateur.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6 -fcolor-diagnostics
   INCLUDES = -I"/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/include" -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Headers -iframework /Users/mahautgalice/Qt/6.10.0/macos/lib -isystem /Users/mahautgalice/Qt/6.10.0/macos/mkspecs/macx-clang -isystem /Users/mahautgalice/Qt/6.10.0/macos/include -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Headers
   OBJECT_DIR = CMakeFiles/App_PPOA.dir
@@ -89,7 +129,7 @@ build CMakeFiles/App_PPOA.dir/login.cpp.o: CXX_COMPILER__App_PPOA_unscanned_Debu
 #############################################
 # Link the executable App_PPOA.app/Contents/MacOS/App_PPOA
 
-build App_PPOA.app/Contents/MacOS/App_PPOA: CXX_EXECUTABLE_LINKER__App_PPOA_Debug CMakeFiles/App_PPOA.dir/App_PPOA_autogen/mocs_compilation.cpp.o CMakeFiles/App_PPOA.dir/main.cpp.o CMakeFiles/App_PPOA.dir/mainwindow.cpp.o CMakeFiles/App_PPOA.dir/login.cpp.o | /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/QtGui /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/QtCore || App_PPOA_autogen App_PPOA_autogen_timestamp_deps
+build App_PPOA.app/Contents/MacOS/App_PPOA: CXX_EXECUTABLE_LINKER__App_PPOA_Debug CMakeFiles/App_PPOA.dir/App_PPOA_autogen/mocs_compilation.cpp.o CMakeFiles/App_PPOA.dir/main.cpp.o CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o CMakeFiles/App_PPOA.dir/Login.cpp.o CMakeFiles/App_PPOA.dir/Turbine.cpp.o CMakeFiles/App_PPOA.dir/Capteur.cpp.o CMakeFiles/App_PPOA.dir/Reservoire.cpp.o CMakeFiles/App_PPOA.dir/Centrale.cpp.o CMakeFiles/App_PPOA.dir/Utilisateur.cpp.o | /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/QtGui /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/QtCore || App_PPOA_autogen App_PPOA_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk -mmacosx-version-min=15.6
   LINK_LIBRARIES = -Wl,-rpath,/Users/mahautgalice/Qt/6.10.0/macos/lib  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/QtGui  -framework AppKit  -framework OpenGL  -framework ImageIO  -framework Metal  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/QtCore  -framework IOKit  -framework DiskArbitration  -framework UniformTypeIdentifiers
   LINK_PATH = -F/Users/mahautgalice/Qt/6.10.0/macos/lib
@@ -175,7 +215,7 @@ build App_PPOA_autogen_timestamp_deps: phony
 #############################################
 # Utility command for App_PPOA_autogen
 
-build App_PPOA_autogen: phony CMakeFiles/App_PPOA_autogen App_PPOA_autogen/include/ui_mainwindow.h App_PPOA_autogen/include/ui_login.h App_PPOA_autogen/timestamp App_PPOA_autogen/mocs_compilation.cpp App_PPOA_autogen_timestamp_deps
+build App_PPOA_autogen: phony CMakeFiles/App_PPOA_autogen App_PPOA_autogen/include/ui_Mainwindow.h App_PPOA_autogen/include/ui_Login.h App_PPOA_autogen/timestamp App_PPOA_autogen/mocs_compilation.cpp App_PPOA_autogen_timestamp_deps
 
 
 #############################################
@@ -192,7 +232,7 @@ build App_PPOA_autogen/timestamp App_PPOA_autogen/mocs_compilation.cpp | ${cmake
 #############################################
 # Phony custom command for CMakeFiles/App_PPOA_autogen
 
-build CMakeFiles/App_PPOA_autogen App_PPOA_autogen/include/ui_mainwindow.h App_PPOA_autogen/include/ui_login.h | ${cmake_ninja_workdir}CMakeFiles/App_PPOA_autogen ${cmake_ninja_workdir}App_PPOA_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}App_PPOA_autogen/include/ui_login.h: phony App_PPOA_autogen/timestamp || App_PPOA_autogen_timestamp_deps
+build CMakeFiles/App_PPOA_autogen App_PPOA_autogen/include/ui_Mainwindow.h App_PPOA_autogen/include/ui_Login.h | ${cmake_ninja_workdir}CMakeFiles/App_PPOA_autogen ${cmake_ninja_workdir}App_PPOA_autogen/include/ui_Mainwindow.h ${cmake_ninja_workdir}App_PPOA_autogen/include/ui_Login.h: phony App_PPOA_autogen/timestamp || App_PPOA_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

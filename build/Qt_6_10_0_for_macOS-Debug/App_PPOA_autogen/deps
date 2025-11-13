@@ -725,16 +725,26 @@ App_PPOA_autogen/timestamp: \
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h \
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/CMakeLists.txt \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Capteur.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Capteur.h \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Centrale.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Centrale.h \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Login.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Login.h \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow.h \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Reservoire.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Reservoire.h \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Turbine.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Turbine.h \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Utilisateur.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Utilisateur.h \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/.qtc/package-manager/maintenance_tool_provider.cmake \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/moc_predefs.h \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
-	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/login.cpp \
-	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/login.h \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/main.cpp \
-	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/mainwindow.cpp \
-	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/mainwindow.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q17memory.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20iterator.h \
@@ -1112,6 +1122,6 @@ App_PPOA_autogen/timestamp: \
 	/Users/mahautgalice/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake \
 	/Users/mahautgalice/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Darwin.cmake \
 	/Users/mahautgalice/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/UnixPaths.cmake \
-	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/login.ui \
-	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/mainwindow.ui \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Login.ui \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow.ui \
 	/Users/mahautgalice/Qt/Tools/CMake/CMake.app/Contents/bin/cmake

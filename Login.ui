@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>jgpygg</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLineEdit" name="passwordText">
@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>oiigo</string>
+    <string/>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::EchoMode::Password</enum>
