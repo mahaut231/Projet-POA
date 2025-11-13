@@ -1,32 +1,27 @@
-#include "Mainwindow.h"
 #include "Login.h"
+#include "Mainwindow1.h"
+#include "Mainwindow2.h"
 #include <QApplication>
-#include "Turbine.h"
+
 int main(int argc, char *argv[])
 {
-
-
-    Turbine t1(1, 5000, false, "2020-03-15", 8000, 2000);
-    t1.afficherInfos();
-    t1.activer();
-    t1.afficherInfos();
-
-
     QApplication a(argc, argv);
 
-    // Créer la fenêtre de login
     Login loginDialog;
+    if (loginDialog.exec() == QDialog::Accepted) {
+        // Récupérer la centrale de l'utilisateur (par exemple via un getter)
+        QString centrale = loginDialog.getCentraleReference(); // il faudra ajouter cette méthode
 
-    // Afficher le login en modal (bloque jusqu'à ce qu'il se ferme)
-    if (loginDialog.exec() == QDialog::Accepted) // on peut utiliser Accepted pour futur gestion mot de passe
-    {
-        // Si login validé, créer la MainWindow
-        MainWindow w;
-        w.show();
-
-        return a.exec(); // l'appli reste ouverte tant que MainWindow est ouverte
+        if (centrale == "1") {
+            MainWindow1 w1;
+            w1.show();
+            return a.exec();
+        } else if (centrale == "2") {
+            MainWindow2 w2;
+            w2.show();
+            return a.exec();
+        }
     }
 
-    // Si login annulé ou fermé, quitter l'application
-    return 0;
+    return 0; // login annulé ou échoué
 }

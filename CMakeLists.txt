@@ -29,6 +29,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Reservoire.h Reservoire.cpp
         Centrale.h Centrale.cpp
         Utilisateur.h Utilisateur.cpp
+        ListeUtilisateurs.txt
+        Mainwindow1.h Mainwindow1.cpp Mainwindow1.ui
+        Mainwindow2.h Mainwindow2.cpp Mainwindow2.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET App_PPOA APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -2,10 +2,11 @@
 #define LOGIN_H
 
 #include <QDialog>
+#include "Utilisateur.h"
 
-namespace Ui {
-class Login;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class Login; }
+QT_END_NAMESPACE
 
 class Login : public QDialog
 {
@@ -15,11 +16,15 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
-private slots:  // <-- ici on déclare le slot
-    void handleLogin();
+    // Getter pour récupérer la centrale de l'utilisateur connecté
+    QString getCentraleReference() const;
+
+private slots:
+    void handleLogin();  // fonction appelée quand on clique sur le bouton
 
 private:
     Ui::Login *ui;
+    QString centraleConnectee; // centrale de l'utilisateur connecté
 };
 
 #endif // LOGIN_H
