@@ -1,12 +1,12 @@
 #include "Turbine.h"
 #include "iostream"
-Turbine::Turbine(int id, long puissance, bool etat, std::string date, int pMax, int pMin):
+Turbine::Turbine(int id, long puissance, bool etat, std::string date):
     id(id),
     puissance(puissance),
     etatActivation(etat),
     dateMiseEnPlace(date),
-    puissanceMax(pMax),
-    puissanceMin(pMin) {}
+    puissanceMax(160),
+    puissanceMin(0) {}
 
 
     //getter et setter :

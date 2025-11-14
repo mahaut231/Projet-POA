@@ -1,6 +1,5 @@
-C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/App_PPOA_autogen/EWIEGA46WW/moc_Login.cpp: C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Login.h \
+C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/App_PPOA_autogen/EWIEGA46WW/moc_Mainwindow2.cpp: C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Mainwindow2.h \
   C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/App_PPOA_autogen/moc_predefs.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20iterator.h \
@@ -154,9 +153,10 @@ C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Deskto
   C:/Qt/6.10.0/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs_win.h \
-  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialog \
-  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -373,5 +373,4 @@ C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Deskto
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Utilisateur.h
+  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h

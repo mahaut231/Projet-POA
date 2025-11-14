@@ -38,7 +38,7 @@ public:
         passwordText = new QLineEdit(Login);
         passwordText->setObjectName("passwordText");
         passwordText->setGeometry(QRect(30, 170, 331, 21));
-        passwordText->setEchoMode(QLineEdit::EchoMode::Password);
+        passwordText->setEchoMode(QLineEdit::EchoMode::Normal);
         label = new QLabel(Login);
         label->setObjectName("label");
         label->setGeometry(QRect(30, 50, 71, 16));
@@ -57,8 +57,8 @@ public:
     void retranslateUi(QDialog *Login)
     {
         Login->setWindowTitle(QCoreApplication::translate("Login", "Dialog", nullptr));
-        idText->setText(QCoreApplication::translate("Login", "jgpygg", nullptr));
-        passwordText->setText(QCoreApplication::translate("Login", "oiigo", nullptr));
+        idText->setText(QString());
+        passwordText->setText(QString());
         label->setText(QCoreApplication::translate("Login", "Identifiant", nullptr));
         label_2->setText(QCoreApplication::translate("Login", "Mot de passe", nullptr));
         LoginButton->setText(QCoreApplication::translate("Login", "Se connecter", nullptr));

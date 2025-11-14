@@ -47,7 +47,7 @@ Login::Login(QWidget *parent)
     ui->setupUi(this);
 
     // Charger les utilisateurs depuis le fichier txt
-    listeUtilisateurs = chargerUtilisateursTxt("../../../ListeUtilisateurs.txt");
+    listeUtilisateurs = chargerUtilisateursTxt("../../ListeUtilisateurs.txt");
 
     // Connexion du bouton login
     connect(ui->LoginButton, &QPushButton::clicked, this, &Login::handleLogin);

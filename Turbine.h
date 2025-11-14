@@ -14,7 +14,7 @@ class Turbine
         int puissanceMin;
 
     public:
-        Turbine(int id, long puissance, bool etatActivation,std::string date, int pMax, int pMin);
+        Turbine(int id, long puissance, bool etatActivation,std::string date);
 
         int getId();
         long getPuissance();
