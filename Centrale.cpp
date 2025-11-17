@@ -23,10 +23,8 @@ void Centrale::setid(int id){
 
 void Centrale::addTurbine(Turbine turbine){
     this->listeDesTurbines.push_back(turbine);
-};//voir pour changée cela avec les valeur d'ID
-//void Centrale::supprTurbine(Turbine turbine){
-  //  this->listeDesTurbines
-//};
+};
+
 void Centrale::setReservoire(Reservoire reservoire){
     this->reservoire=reservoire;
 };

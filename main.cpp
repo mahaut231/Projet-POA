@@ -90,6 +90,21 @@ int main(int argc, char *argv[])
     std::cout << "Desactivation de la turbine 1...\n";
     turbines[0].desactiver();
 
+    // Test valeurs min et max
+    std::cout << "\n--- Test valeurs min et max ---\n";
+    std::cout << "test limite au dessus de la valeurs max...\n";
+    std::cout <<turbines[3].getdebits()<< " \n";
+    turbines[3].setdebits(170) ;
+    std::cout <<turbines[3].getdebits()<< " \n";
+    std::cout << "test limite en dessous de la moyenne\n";
+    std::cout << turbines[3].getdebits()<< " \n";
+    turbines[3].setdebits(-160);
+    std::cout << turbines[3].getdebits() << " \n";
+    std::cout << "test valeurs correctes\n";
+    std::cout << turbines[3].getdebits() << " \n";
+    turbines[3].setdebits(60);
+    std::cout <<turbines[3].getdebits()<< " \n";
+
     // Nouveau calcul après modification
     std::cout << "\n--- Recalcul apres modifications ---\n";
     float nouvelleProduction = maCentrale.calculerProductionTotale();

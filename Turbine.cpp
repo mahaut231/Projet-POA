@@ -22,7 +22,17 @@ Turbine::Turbine(int id, long debits, bool etat, std::string date, Capteur capte
         this->id=id;}
 
     void Turbine::setdebits(long debits){
-        this->debits=debits;}
+        if(debits>this->debitsMax){
+            std::cout<< "La valeur est superieur à la limite maximum aucune valeurs changée \n" ;
+
+        }
+        else if(debits<this->debitsMin){
+            std::cout<< "La valeur est inferieur à la limite minimum aucune valeurs changée \n" ;
+        }
+        else{
+            this->debits=debits;
+        }
+        }
 
     void Turbine::setEtatActivation(bool etat){
         this->etatActivation=etat;}
