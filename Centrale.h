@@ -10,12 +10,15 @@ class Centrale
 private:
     //Attributs
     int id;
-    long volumeDeProduction;
+    float niveauAmont;
+    float niveauAval;
+    float hauteurDeChute;
+    long debitsTotal;
     std::vector<Turbine> listeDesTurbines;
     Reservoire reservoire;
 
 public:
-    Centrale(int id, long volume,std::vector<Turbine> listeTurbine,Reservoire reservoire);
+    Centrale(int id, float niveauAmont, float niveauAval, std::vector<Turbine> listeTurbine,Reservoire reservoire);
 
     int getId();
     long getVolume();
@@ -24,7 +27,7 @@ public:
 
 
     void setid(int id);
-    void setVolume(long volume);
+
     void addTurbine(Turbine turbine);
     void supprTurbine(Turbine turbine);
     void setReservoire(Reservoire reservoire);
@@ -35,14 +38,14 @@ public:
     // voir pour changée les sortie afin de renvoyée se dont le front a besoin
 
     //fonction de calcule du débit
-    float fonctionT1(float chuteNet,float debitUnitaire);
-    float fonctionT2(float chuteNet,float debitUnitaire);
-    float fonctionT3(float chuteNet,float debitUnitaire);
-    float fonctionT4(float chuteNet,float debitUnitaire);
-    float fonctionT5(float chuteNet,float debitUnitaire);
-    float fonctionPtot(float chuteNet,float q1,float q2,float q3,float q4,float q5);
+    float fonctionT1(float debitUnitaire);
+    float fonctionT2(float debitUnitaire);
+    float fonctionT3(float debitUnitaire);
+    float fonctionT4(float debitUnitaire);
+    float fonctionT5(float debitUnitaire);
     float elevationAval();
     float hauteurDeChuteNet();
+    float calculerProductionTotale();
 };
 
 #endif // CENTRALE_H

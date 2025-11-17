@@ -3,15 +3,16 @@
 #include <iostream>
 #include <cmath>
 
-Centrale::Centrale(int id, long volume,std::vector<Turbine> listeTurbine,Reservoire reservoire):
+Centrale::Centrale(int id,float niveauAmont, float niveauAval,std::vector<Turbine> listeTurbine,Reservoire reservoire):
     id(id),
-    volumeDeProduction(volume),
+    niveauAmont(niveauAmont),
+    niveauAval(niveauAval),
+    hauteurDeChute(niveauAmont-niveauAval),
     listeDesTurbines(listeTurbine),
     reservoire(reservoire){}
 
 
 int Centrale::getId(){return id;}
-long Centrale::getVolume(){return volumeDeProduction;}
 std::vector<Turbine>Centrale:: getListeTurbine(){return listeDesTurbines;}
 Reservoire Centrale::getreservoire(){return reservoire;}
 
@@ -19,9 +20,7 @@ Reservoire Centrale::getreservoire(){return reservoire;}
 void Centrale::setid(int id){
     this->id=id;
 };
-void Centrale::setVolume(long volume){
-    this->volumeDeProduction=volume;
-};
+
 void Centrale::addTurbine(Turbine turbine){
     this->listeDesTurbines.push_back(turbine);
 };//voir pour changée cela avec les valeur d'ID
@@ -32,7 +31,8 @@ void Centrale::setReservoire(Reservoire reservoire){
     this->reservoire=reservoire;
 };
 
-float Centrale::fonctionT1(float hc, float du){
+float Centrale::fonctionT1(float du){
+    float hc =hauteurDeChute;
     float p00 = 1.102;
     float p10 = -0.03187;
     float p01 = -0.04866;
@@ -46,7 +46,8 @@ float Centrale::fonctionT1(float hc, float du){
 
 }
 
-float Centrale::fonctionT2(float hc, float du){
+float Centrale::fonctionT2 (float du){
+    float hc =hauteurDeChute;
     float p00 = -1.382;
     float p10 = 0.09969;
     float p01 = -1.945;
@@ -57,12 +58,13 @@ float Centrale::fonctionT2(float hc, float du){
     float p21 = -0.001096;
     float p03 = -1.933*pow(10,-5);
 
-    float res = p00 + p10*hc + p01*du + p11*hc*du + p20*pow(hc,2) + p02*hc*pow(du,2) + p21*du*pow(hc,2) + p12*hc*pow(du,2) + p03*pow(du,3);
+    float res = p00 + p10*hc + p01*du + p11*hc*du + p20*pow(hc,2) + p02*pow(du,2) + p21*du*pow(hc,2) + p12*hc*pow(du,2) + p03*pow(du,3);
     return res;
 
 }
 
-float Centrale::fonctionT3(float hc, float du){
+float Centrale::fonctionT3( float du){
+    float hc =hauteurDeChute;
     float p00 = 0.7799;
     float p10 = -0.02261;
     float p01 = 0.1995;
@@ -75,7 +77,8 @@ float Centrale::fonctionT3(float hc, float du){
     return res;
 }
 
-float Centrale::fonctionT4(float hc, float du){
+float Centrale::fonctionT4(float du){
+    float hc =hauteurDeChute;
     float p00 = 20.22;
     float p10 = -0.5777;
     float p01 = -0.4586;
@@ -88,7 +91,8 @@ float Centrale::fonctionT4(float hc, float du){
     return res;
 }
 
-float Centrale::fonctionT5(float hc, float du){
+float Centrale::fonctionT5( float du){
+    float hc =hauteurDeChute;
     float p00 = -212.1;
     float p10 = 12.17;
     float p01 = 0.004397;
@@ -110,6 +114,53 @@ float Centrale::elevationAval(){
     float p2 = 0.007022;
     float p3 = 99.98;
 
-    float res = p1*pow(volumeDeProduction,2) + p2*volumeDeProduction + p3;
+    float res = p1*pow(debitsTotal,2) + p2*debitsTotal + p3;
     return res;
 }
+
+// À ajouter dans Centrale.cpp
+
+float Centrale::calculerProductionTotale() {
+    float hc =hauteurDeChute;
+    float productionTotale = 0.0;
+
+    // Parcourir toutes les turbines
+    for(int i = 0; i < listeDesTurbines.size(); i++) {
+        Turbine turbine = listeDesTurbines[i];
+
+        // Vérifier si la turbine est active
+        if(turbine.getEtatActivation()) {
+
+            float du = turbine.getdebits() ;
+            float production = 0.0;
+
+            // Utiliser la fonction correspondant à l'ID de la turbine
+            switch(turbine.getId()) {
+            case 1:
+                production = fonctionT1( du);
+                break;
+            case 2:
+                production = fonctionT2( du);
+                break;
+            case 3:
+                production = fonctionT3( du);
+                break;
+            case 4:
+                production = fonctionT4( du);
+                break;
+            case 5:
+                production = fonctionT5( du);
+                break;
+            default:
+                production = 0.0;
+                break;
+            }
+
+            productionTotale += production;
+        }
+    }
+
+    return productionTotale;
+}
+
+

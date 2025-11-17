@@ -1,34 +1,36 @@
 #ifndef TURBINE_H
 #define TURBINE_H
-#include "iostream"
+#include <iostream>
+#include "Capteur.h"
 class Turbine
 {
     private:
 
         //Attributs
         int id;
-        long puissance;
+        Capteur capteur;
+        long debits;
         bool etatActivation;
         std::string dateMiseEnPlace;
-        int puissanceMax;
-        int puissanceMin;
+        int debitsMax;
+        int debitsMin;
 
     public:
-        Turbine(int id, long puissance, bool etatActivation,std::string date);
+        Turbine(int id, long debits, bool etatActivation,std::string date, Capteur capteur);
 
         int getId();
-        long getPuissance();
+        long getdebits();
         bool getEtatActivation();
         std::string getDate();
         int getpMax();
         int getpMin();
 
         void setId(int id);
-        void setPuissance(long p);
+        void setdebits(long p);
         void setEtatActivation(bool etat);
         void setDate(std::string date);
-        void setpMax(int puissance);
-        void setpMin(int puissance);
+        void setpMax(int debits);
+        void setpMin(int debits);
 
 
         // Méthodes

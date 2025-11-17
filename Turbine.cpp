@@ -1,27 +1,28 @@
 #include "Turbine.h"
 #include "iostream"
-Turbine::Turbine(int id, long puissance, bool etat, std::string date):
+Turbine::Turbine(int id, long debits, bool etat, std::string date, Capteur capteur):
     id(id),
-    puissance(puissance),
+    debits(debits),
     etatActivation(etat),
     dateMiseEnPlace(date),
-    puissanceMax(160),
-    puissanceMin(0) {}
+    debitsMax(160),
+    debitsMin(0),
+    capteur(capteur){}
 
 
     //getter et setter :
     int Turbine::getId(){return id;}
-    long Turbine::getPuissance(){return puissance;}
+    long Turbine::getdebits(){return debits;}
     bool Turbine::getEtatActivation(){return etatActivation;}
     std::string Turbine::getDate() { return dateMiseEnPlace;}
-    int Turbine::getpMax(){return puissanceMax;}
-    int Turbine::getpMin(){return puissanceMin;}
+    int Turbine::getpMax(){return debitsMax;}
+    int Turbine::getpMin(){return debitsMin;}
 
     void Turbine::setId(int id){
         this->id=id;}
 
-    void Turbine::setPuissance(long puissance){
-        this->puissance=puissance;}
+    void Turbine::setdebits(long debits){
+        this->debits=debits;}
 
     void Turbine::setEtatActivation(bool etat){
         this->etatActivation=etat;}
@@ -30,10 +31,10 @@ Turbine::Turbine(int id, long puissance, bool etat, std::string date):
         this->dateMiseEnPlace=date;}
 
     void Turbine::setpMax(int p){
-        this->puissanceMax=p;}
+        this->debitsMax=p;}
 
     void Turbine::setpMin(int p){
-        this->puissanceMin=p;}
+        this->debitsMin=p;}
 
 
     // Méthode pour activer la turbine
@@ -51,6 +52,6 @@ Turbine::Turbine(int id, long puissance, bool etat, std::string date):
     // Méthode pour afficher les informations
     void Turbine::afficherInfos() const {
         std::cout << "Turbine #" << id << " (" << (etatActivation ? "Active" : "Inactive") << ")\n"
-                  << "Puissance: " << puissance << "W\n"
+                  << "debits: " << debits << "W\n"
                   << "Date: " << dateMiseEnPlace << "\n";
     }
