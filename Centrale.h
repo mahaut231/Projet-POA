@@ -4,9 +4,9 @@
 #include <vector>
 #include "Turbine.h"
 #include"Reservoire.h"
+#include "Observer.h"
 
-class Centrale
-{
+class Centrale : public Observer {
 private:
     //Attributs
     int id;
@@ -14,22 +14,23 @@ private:
     float niveauAval;
     float hauteurDeChute;
     long debitsTotal;
-    std::vector<Turbine> listeDesTurbines;
+    std::vector<Turbine*> listeDesTurbines;
     Reservoire reservoire;
+    float productionTotaleActuelle;
 
 public:
-    Centrale(int id, float niveauAmont, float niveauAval, std::vector<Turbine> listeTurbine,Reservoire reservoire);
+    Centrale(int id, float niveauAmont, float niveauAval, std::vector<Turbine*> listeTurbine,Reservoire reservoire);
 
     int getId();
     long getVolume();
-    std::vector<Turbine> getListeTurbine();
+    std::vector<Turbine*> getListeTurbine();
     Reservoire getreservoire();
 
 
     void setid(int id);
 
-    void addTurbine(Turbine turbine);
-    void supprTurbine(Turbine turbine);
+    void addTurbine(Turbine* turbine);
+    void supprTurbine(Turbine* turbine);
     void setReservoire(Reservoire reservoire);
 
     std::string voirDonnesAllTurbines();
@@ -44,8 +45,13 @@ public:
     float fonctionT4(float debitUnitaire);
     float fonctionT5(float debitUnitaire);
     float elevationAval();
+
     float hauteurDeChuteNet();
+    float calculerdebitTotale();
     float calculerProductionTotale();
+
+    void afficherEtatCentrale();
+    void update() override;
 };
 
 #endif // CENTRALE_H

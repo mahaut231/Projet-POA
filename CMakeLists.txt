@@ -32,6 +32,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ListeUtilisateurs.txt
         Mainwindow1.h Mainwindow1.cpp Mainwindow1.ui
         Mainwindow2.h Mainwindow2.cpp Mainwindow2.ui
+        observer.h
+        subject.h
 
     )
 # Define target properties for Android with Qt 6 as:

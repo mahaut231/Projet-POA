@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 72,
+				"line" : 74,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 55,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
@@ -393,11 +393,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "App_PPOA_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "App_PPOA_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "App_PPOA_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "App_PPOA::@6890427a1f51a3e7e1df",
@@ -536,7 +536,9 @@
 				25,
 				26,
 				27,
-				28
+				28,
+				29,
+				30
 			]
 		},
 		{
@@ -554,14 +556,14 @@
 			"sourceIndexes" : 
 			[
 				18,
-				29
+				31
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				30
+				32
 			]
 		}
 	],
@@ -703,6 +705,16 @@
 			"backtrace" : 4,
 			"path" : "Mainwindow2.ui",
 			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "observer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "subject.h",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,

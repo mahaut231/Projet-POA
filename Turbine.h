@@ -1,9 +1,9 @@
 #ifndef TURBINE_H
 #define TURBINE_H
 #include <iostream>
+#include "Subject.h"
 #include "Capteur.h"
-class Turbine
-{
+class Turbine : public Subject {
     private:
 
         //Attributs
@@ -26,7 +26,7 @@ class Turbine
         int getpMin();
 
         void setId(int id);
-        void setdebits(long p);
+        void setdebits(long d);
         void setEtatActivation(bool etat);
         void setDate(std::string date);
         void setpMax(int debits);

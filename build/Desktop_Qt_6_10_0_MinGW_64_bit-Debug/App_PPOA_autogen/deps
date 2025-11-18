@@ -582,8 +582,10 @@ App_PPOA_autogen/timestamp: \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/centrale.cpp \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/centrale.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/main.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/observer.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/reservoire.cpp \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/reservoire.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/subject.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/turbine.cpp \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/turbine.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/Login.ui \

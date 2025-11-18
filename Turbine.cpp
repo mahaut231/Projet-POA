@@ -22,20 +22,19 @@ Turbine::Turbine(int id, long debits, bool etat, std::string date, Capteur capte
         this->id=id;}
 
     void Turbine::setdebits(long debits){
-        if(debits>this->debitsMax){
-            std::cout<< "La valeur est superieur à la limite maximum aucune valeurs changée \n" ;
-
+        if(debits > this->debitsMax){
+            std::cout<< "La valeur est superieur à la limite maximum aucune valeurs changée \n";
         }
-        else if(debits<this->debitsMin){
-            std::cout<< "La valeur est inferieur à la limite minimum aucune valeurs changée \n" ;
+        else if(debits < this->debitsMin){
+            std::cout<< "La valeur est inferieur à la limite minimum aucune valeurs changée \n";
         }
         else{
-            this->debits=debits;
+            this->debits = debits;
+            notifierObservers();
+            std::cout << "Turbine " << id << " - Nouveau debit: " << debits << " m3/s\n";
         }
-        }
+    }
 
-    void Turbine::setEtatActivation(bool etat){
-        this->etatActivation=etat;}
 
     void Turbine::setDate(std::string date) {
         this->dateMiseEnPlace=date;}
@@ -47,21 +46,21 @@ Turbine::Turbine(int id, long debits, bool etat, std::string date, Capteur capte
         this->debitsMin=p;}
 
 
-    // Méthode pour activer la turbine
     void Turbine::activer() {
         etatActivation = true;
         std::cout << "Turbine " << id << " activée.\n";
+        notifierObservers();
     }
 
-    // Méthode pour désactiver la turbine
     void Turbine::desactiver() {
         etatActivation = false;
         std::cout << "Turbine " << id << " désactivée.\n";
+        notifierObservers();
     }
 
     // Méthode pour afficher les informations
     void Turbine::afficherInfos() const {
         std::cout << "Turbine #" << id << " (" << (etatActivation ? "Active" : "Inactive") << ")\n"
-                  << "debits: " << debits << "W\n"
+                  << "debits: " << debits << "m3/s\n"
                   << "Date: " << dateMiseEnPlace << "\n";
     }
