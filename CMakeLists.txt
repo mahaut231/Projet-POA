@@ -34,6 +34,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Mainwindow2.h Mainwindow2.cpp Mainwindow2.ui
         observer.h
         subject.h
+        manager.h manager.cpp
+        gestionnairecomptes.h gestionnairecomptes.cpp
+        decorateurcapteur.h decorateurcapteur.cpp
+        capteurreservoir.h capteurreservoir.cpp
+        capteurturbine.h capteurturbine.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

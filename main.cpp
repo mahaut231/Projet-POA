@@ -10,99 +10,124 @@
 #include <iostream>
 #include <vector>
 
-int main(int argc, char *argv[])
-{
-    std::cout << "=== TEST DU PATRON OBSERVER ===\n\n";
+#include <QCoreApplication>
+#include "Manager.h"
+#include "Utilisateur.h"
+#include <QDebug>
 
-    // Création des capteurs
-    Capteur capteurAmont(1, 125000, "Bon");
-    Capteur capteurAval(2, 100000, "Moyen");
-    Capteur capteurT1(3, 50000, "Bon");
-    Capteur capteurT2(4, 75000, "Bon");
-    Capteur capteurT3(5, 60000, "Moyen");
-    Capteur capteurT4(6, 80000, "Bon");
-    Capteur capteurT5(7, 70000, "Bon");
+#include "Capteur.h"
+#include "CapteurReservoir.h"
+#include "CapteurTurbine.h"
+#include <iostream>
+#include <QThread>
 
-    // Création du réservoir
-    Reservoire monReservoir(1, capteurAmont, capteurAval);
+int main(int argc, char *argv[]) {
+    std::cout << "=== TEST PATRON DECORATEUR AVEC HISTORIQUE ===\n\n";
 
-    // Création des turbines (ATTENTION: on les crée comme objets maintenant)
-    Turbine turbine1(1,160, true, "2020-01-15", capteurT1);
-    Turbine turbine2(2, 141, true, "2019-05-22", capteurT2);
-    Turbine turbine3(3, 0, false, "2021-03-10", capteurT3);
-    Turbine turbine4(4, 140, true, "2018-11-05", capteurT4);
-    Turbine turbine5(5, 140, true, "2022-07-18", capteurT5);
+    // ===== TEST 1: Capteur Réservoir Amont =====
+    std::cout << "--- Test Capteur Reservoir Amont ---\n";
+    Capteur* capteurBaseAmont = new Capteur(10, 145000, "Bon");
+    CapteurReservoir* capteurAmont = new CapteurReservoir(capteurBaseAmont, "amont");
 
-    // Création du vecteur de pointeurs vers les turbines
-    std::vector<Turbine*> lesTurbines;
-    lesTurbines.push_back(&turbine1);
-    lesTurbines.push_back(&turbine2);
-    lesTurbines.push_back(&turbine3);
-    lesTurbines.push_back(&turbine4);
-    lesTurbines.push_back(&turbine5);
+    capteurAmont->afficherMesure();
 
-    // Création de la centrale (elle s'enregistre automatiquement comme observer)
-    Centrale maCentrale(1,137.89, 103.76, lesTurbines, monReservoir);
+    // Simulation de mesures au fil du temps
+    std::cout << "\nAjout de mesures...\n";
+    QThread::msleep(100);
+    capteurBaseAmont->ajouterMesure(146000);
+    QThread::msleep(100);
+    capteurBaseAmont->ajouterMesure(147500);
+    QThread::msleep(100);
+    capteurBaseAmont->ajouterMesure(148000);
 
-    std::cout << "Centrale #" << maCentrale.getId() << " creee\n";
-    maCentrale.afficherEtatCentrale();
+    std::cout << "\nMesure actuelle:\n";
+    capteurAmont->afficherMesure();
 
-    // ===== TEST 1: Changement de débit d'une turbine =====
-    std::cout << "\n*** TEST 1: Changement de debit de la turbine 1 ***\n";
-    turbine1.setdebits(90);  // La centrale sera automatiquement notifiée!
+    std::cout << "\nHistorique complet:\n";
+    capteurAmont->afficherHistorique();
 
-    maCentrale.afficherEtatCentrale();
+    // ===== TEST 2: Capteur Réservoir Aval =====
+    std::cout << "\n--- Test Capteur Reservoir Aval ---\n";
+    Capteur* capteurBaseAval = new Capteur(11, 102000, "Moyen");
+    CapteurReservoir* capteurAval = new CapteurReservoir(capteurBaseAval, "aval");
 
-    // ===== TEST 2: Activation d'une turbine inactive =====
-    std::cout << "\n*** TEST 2: Activation de la turbine 3 ***\n";
-    turbine3.activer();  // La centrale sera automatiquement notifiée!
+    capteurAval->afficherMesure();
 
-    maCentrale.afficherEtatCentrale();
+    std::cout << "\nAjout de mesures...\n";
+    QThread::msleep(100);
+    capteurBaseAval->ajouterMesure(101500);
+    QThread::msleep(100);
+    capteurBaseAval->ajouterMesure(101000);
 
-    // ===== TEST 3: Désactivation d'une turbine active =====
-    std::cout << "\n*** TEST 3: Desactivation de la turbine 2 ***\n";
-    turbine2.desactiver();  // La centrale sera automatiquement notifiée!
+    std::cout << "\nHistorique (2 dernieres mesures):\n";
+    capteurAval->afficherHistorique(2);
 
-    maCentrale.afficherEtatCentrale();
+    // ===== TEST 3: Capteurs de Turbines =====
+    std::cout << "\n--- Test Capteurs de Turbines ---\n";
 
-    // ===== TEST 4: Changements multiples =====
-    std::cout << "\n*** TEST 4: Changements multiples ***\n";
-    std::cout << "Activation turbine 5 et changement debit turbine 4...\n";
-    turbine5.activer();
-    turbine4.setdebits(120);
+    Capteur* capteurBaseT1 = new Capteur(20, 50000, "Bon");
+    CapteurTurbine* capteurT1 = new CapteurTurbine(capteurBaseT1, 1);
 
-    maCentrale.afficherEtatCentrale();
+    Capteur* capteurBaseT2 = new Capteur(21, 75000, "Bon");
+    CapteurTurbine* capteurT2 = new CapteurTurbine(capteurBaseT2, 2);
 
-    // ===== TEST 5: Tentative de débit invalide =====
-    std::cout << "\n*** TEST 5: Tentative de debit invalide ***\n";
-    turbine1.setdebits(200);  // Devrait être rejeté (> 160)
+    capteurT1->afficherMesure();
+    std::cout << "\n";
+    capteurT2->afficherMesure();
 
-    maCentrale.afficherEtatCentrale();
+    // Simulation de variation de débit sur Turbine 1
+    std::cout << "\nVariation de debit sur Turbine 1...\n";
+    QThread::msleep(100);
+    capteurBaseT1->ajouterMesure(55000);
+    QThread::msleep(100);
+    capteurBaseT1->ajouterMesure(60000);
+    QThread::msleep(100);
+    capteurBaseT1->ajouterMesure(58000);
 
-    // ===== TEST 6: Ajout d'une nouvelle turbine =====
-    std::cout << "\n*** TEST 6: Ajout d'une nouvelle turbine ***\n";
-    Capteur capteurT6(8, 85000, "Bon");
-    Turbine nouvelleTurbine(6, 95, true, "2024-01-01", capteurT6);
+    std::cout << "\nHistorique Turbine 1:\n";
+    capteurT1->afficherHistorique();
 
-    std::cout << "Ajout de la turbine 6...\n";
-    maCentrale.addTurbine(&nouvelleTurbine);
-
-    maCentrale.afficherEtatCentrale();
-
-    // ===== Affichage détaillé des turbines =====
-    std::cout << "\n===== DETAIL DES TURBINES =====\n";
-    std::vector<Turbine*> turbines = maCentrale.getListeTurbine();
-    for(int i = 0; i < turbines.size(); i++) {
-        turbines[i]->afficherInfos();
-        std::cout << "\n";
+    // ===== TEST 4: Récupération historique pour graphique =====
+    std::cout << "\n--- Test Recuperation pour Graphique ---\n";
+    std::vector<MesureHistorique> hist = capteurBaseT1->getHistorique();
+    std::cout << "Nombre de points de donnees: " << hist.size() << "\n";
+    std::cout << "Donnees pour tracer un graphique:\n";
+    for(int i = 0; i < hist.size(); i++) {
+        double debit = hist[i].valeur / 1000.0;
+        std::cout << "  Point " << (i+1) << ": "
+                  << hist[i].timestamp.toString("HH:mm:ss").toStdString()
+                  << " -> " << debit << " m3/s\n";
     }
+
+    // ===== TEST 5: Simulation complète d'une centrale =====
+    std::cout << "\n--- Simulation Complete Centrale ---\n";
+    std::cout << "\nETAT ACTUEL DU RESERVOIR:\n";
+    capteurAmont->afficherMesure();
+    capteurAval->afficherMesure();
+
+    std::cout << "\nETAT ACTUEL DES TURBINES:\n";
+    capteurT1->afficherMesure();
+    capteurT2->afficherMesure();
+
+    std::cout << "\n--- Historiques disponibles pour graphiques ---\n";
+    std::cout << "Reservoir amont: " << capteurBaseAmont->getNombreMesures() << " mesures\n";
+    std::cout << "Reservoir aval: " << capteurBaseAval->getNombreMesures() << " mesures\n";
+    std::cout << "Turbine 1: " << capteurBaseT1->getNombreMesures() << " mesures\n";
+    std::cout << "Turbine 2: " << capteurBaseT2->getNombreMesures() << " mesures\n";
+
+    // Nettoyage
+    delete capteurAmont;
+    delete capteurAval;
+    delete capteurT1;
+    delete capteurT2;
+    delete capteurBaseAmont;
+    delete capteurBaseAval;
+    delete capteurBaseT1;
+    delete capteurBaseT2;
 
     std::cout << "\n=== FIN DU TEST ===\n";
 
     return 0;
-
-
-//=========================================================================================
 
     QApplication a(argc, argv);
 
@@ -123,4 +148,10 @@ int main(int argc, char *argv[])
     }
 
     return 0; // login annulé ou échoué
+
+
+
+//=========================================================================================
+
+
 }

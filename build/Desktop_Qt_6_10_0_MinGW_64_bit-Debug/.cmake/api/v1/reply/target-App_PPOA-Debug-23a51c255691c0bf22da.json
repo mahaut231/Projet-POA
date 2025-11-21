@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 74,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 57,
+				"line" : 62,
 				"parent" : 0
 			},
 			{
@@ -386,7 +386,12 @@
 				15,
 				17,
 				20,
-				23
+				23,
+				28,
+				30,
+				32,
+				34,
+				36
 			]
 		}
 	],
@@ -517,7 +522,12 @@
 				15,
 				17,
 				20,
-				23
+				23,
+				28,
+				30,
+				32,
+				34,
+				36
 			]
 		},
 		{
@@ -536,9 +546,14 @@
 				25,
 				26,
 				27,
-				28,
 				29,
-				30
+				31,
+				33,
+				35,
+				37,
+				38,
+				39,
+				40
 			]
 		},
 		{
@@ -556,14 +571,14 @@
 			"sourceIndexes" : 
 			[
 				18,
-				31
+				41
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				32
+				42
 			]
 		}
 	],
@@ -715,6 +730,61 @@
 			"backtrace" : 4,
 			"path" : "subject.h",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "manager.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "manager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "gestionnairecomptes.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "gestionnairecomptes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "decorateurcapteur.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "decorateurcapteur.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "capteurreservoir.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "capteurreservoir.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "capteurturbine.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "capteurturbine.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,

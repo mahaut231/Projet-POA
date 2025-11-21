@@ -24,15 +24,16 @@ QList<Utilisateur> chargerUtilisateursTxt(const QString& fichier)
 
         QStringList champs = ligne.split(";");
         if (champs.size() == 4) {
-            Utilisateur u;
-            u.id = champs[0].toInt();
-            u.login = champs[1];
-            u.password = champs[2];
-            u.centraleReference = champs[3];
+            // Utiliser le constructeur au lieu d'accéder directement aux attributs
+            int id = champs[0].toInt();
+            QString login = champs[1];
+            QString password = champs[2];
+            QString centrale = champs[3];
+
+            Utilisateur u(id, login, password, centrale);
             liste.append(u);
         }
     }
-
     file.close();
     return liste;
 }
@@ -65,10 +66,10 @@ void Login::handleLogin()
     QString saisiePassword = ui->passwordText->text();
 
     for (const Utilisateur& u : listeUtilisateurs) {
-        if (u.login == saisieLogin && u.password == saisiePassword) {
+        // Utiliser les getters au lieu d'accéder directement aux attributs
+        if (u.getLogin() == saisieLogin && u.getPassword() == saisiePassword) {
             // Stocker la centrale de l'utilisateur pour récupérer après
-            centraleConnectee = u.centraleReference;
-
+            centraleConnectee = u.getCentraleReference();
             accept(); // ferme le dialogue et retourne QDialog::Accepted
             return;
         }

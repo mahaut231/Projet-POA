@@ -1,4 +1,5 @@
 App_PPOA_autogen/timestamp: \
+	C:/Qt/6.10.0/mingw_64/include/QtCore/QDateTime \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
@@ -22,6 +23,7 @@ App_PPOA_autogen/timestamp: \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qbytearraylist.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qbytearrayview.h \
+	C:/Qt/6.10.0/mingw_64/include/QtCore/qcalendar.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qchar.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qcheckedint_impl.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qcompare.h \
@@ -36,6 +38,7 @@ App_PPOA_autogen/timestamp: \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qcontiguouscache.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qdarwinhelpers.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qdatastream.h \
+	C:/Qt/6.10.0/mingw_64/include/QtCore/qdatetime.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qdebug.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qendian.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qexceptionhandling.h \
@@ -55,6 +58,7 @@ App_PPOA_autogen/timestamp: \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qlatin1stringview.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qline.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qlist.h \
+	C:/Qt/6.10.0/mingw_64/include/QtCore/qlocale.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qlogging.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qmalloc.h \
 	C:/Qt/6.10.0/mingw_64/include/QtCore/qmap.h \
@@ -579,9 +583,19 @@ App_PPOA_autogen/timestamp: \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/capteur.cpp \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/capteur.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/capteurreservoir.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/capteurreservoir.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/capteurturbine.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/capteurturbine.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/centrale.cpp \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/centrale.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/decorateurcapteur.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/decorateurcapteur.h \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/gestionnairecomptes.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/gestionnairecomptes.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/main.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/manager.cpp \
+	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/manager.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/observer.h \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/reservoire.cpp \
 	C:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/reservoire.h \
