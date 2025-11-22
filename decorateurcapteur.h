@@ -12,7 +12,7 @@ public:
     DecorateurCapteur(Capteur* capteur);
     virtual ~DecorateurCapteur() {}
 
-    // Délégation des getters de base (sans override car pas virtuels)
+
     int getId() const { return capteurDecore->getId(); }
     long getMesure() const { return capteurDecore->getMesure(); }
     std::string getNiveau() const { return capteurDecore->getNiveau(); }

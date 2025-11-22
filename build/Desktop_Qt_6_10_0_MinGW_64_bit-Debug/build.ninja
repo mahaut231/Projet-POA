@@ -177,6 +177,14 @@ build CMakeFiles/App_PPOA.dir/capteurturbine.cpp.obj: CXX_COMPILER__App_PPOA_uns
   OBJECT_DIR = CMakeFiles\App_PPOA.dir
   OBJECT_FILE_DIR = CMakeFiles\App_PPOA.dir
 
+build CMakeFiles/App_PPOA.dir/chargeurcsv.cpp.obj: CXX_COMPILER__App_PPOA_unscanned_Debug C$:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/chargeurcsv.cpp || cmake_object_order_depends_target_App_PPOA
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\App_PPOA.dir\chargeurcsv.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/chanudet/Documents/Polytech/uqac/trimestre1/POO/Projet-POA/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/App_PPOA_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\App_PPOA.dir
+  OBJECT_FILE_DIR = CMakeFiles\App_PPOA.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target App_PPOA
@@ -185,7 +193,7 @@ build CMakeFiles/App_PPOA.dir/capteurturbine.cpp.obj: CXX_COMPILER__App_PPOA_uns
 #############################################
 # Link the executable App_PPOA.exe
 
-build App_PPOA.exe: CXX_EXECUTABLE_LINKER__App_PPOA_Debug CMakeFiles/App_PPOA.dir/App_PPOA_autogen/mocs_compilation.cpp.obj CMakeFiles/App_PPOA.dir/main.cpp.obj CMakeFiles/App_PPOA.dir/Mainwindow.cpp.obj CMakeFiles/App_PPOA.dir/Login.cpp.obj CMakeFiles/App_PPOA.dir/turbine.cpp.obj CMakeFiles/App_PPOA.dir/capteur.cpp.obj CMakeFiles/App_PPOA.dir/reservoire.cpp.obj CMakeFiles/App_PPOA.dir/centrale.cpp.obj CMakeFiles/App_PPOA.dir/Utilisateur.cpp.obj CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.obj CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.obj CMakeFiles/App_PPOA.dir/manager.cpp.obj CMakeFiles/App_PPOA.dir/gestionnairecomptes.cpp.obj CMakeFiles/App_PPOA.dir/decorateurcapteur.cpp.obj CMakeFiles/App_PPOA.dir/capteurreservoir.cpp.obj CMakeFiles/App_PPOA.dir/capteurturbine.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || App_PPOA_autogen App_PPOA_autogen_timestamp_deps
+build App_PPOA.exe: CXX_EXECUTABLE_LINKER__App_PPOA_Debug CMakeFiles/App_PPOA.dir/App_PPOA_autogen/mocs_compilation.cpp.obj CMakeFiles/App_PPOA.dir/main.cpp.obj CMakeFiles/App_PPOA.dir/Mainwindow.cpp.obj CMakeFiles/App_PPOA.dir/Login.cpp.obj CMakeFiles/App_PPOA.dir/turbine.cpp.obj CMakeFiles/App_PPOA.dir/capteur.cpp.obj CMakeFiles/App_PPOA.dir/reservoire.cpp.obj CMakeFiles/App_PPOA.dir/centrale.cpp.obj CMakeFiles/App_PPOA.dir/Utilisateur.cpp.obj CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.obj CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.obj CMakeFiles/App_PPOA.dir/manager.cpp.obj CMakeFiles/App_PPOA.dir/gestionnairecomptes.cpp.obj CMakeFiles/App_PPOA.dir/decorateurcapteur.cpp.obj CMakeFiles/App_PPOA.dir/capteurreservoir.cpp.obj CMakeFiles/App_PPOA.dir/capteurturbine.cpp.obj CMakeFiles/App_PPOA.dir/chargeurcsv.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || App_PPOA_autogen App_PPOA_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

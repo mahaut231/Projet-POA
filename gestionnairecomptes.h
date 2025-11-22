@@ -24,18 +24,17 @@ public:
     // Accès à l'instance unique
     static GestionnaireComptes* getInstance();
 
-    // Gestion basique
     bool ajouterUtilisateur(int id, const QString& login, const QString& password,
                             const QString& centrale);
     bool supprimerUtilisateur(int id);
     Utilisateur* rechercherUtilisateur(int id);
 
-    // Affichage global et par centrale
+
     void afficherTousLesComptes();
     void afficherParCentrale(const QString& centrale);
     QVector<Utilisateur*> obtenirUtilisateursParCentrale(const QString& centrale);
 
-    // Statistiques
+
     int getNombreTotalUtilisateurs() const;
     int getNombreUtilisateursParCentrale(const QString& centrale) const;
 };

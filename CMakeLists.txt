@@ -39,6 +39,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         decorateurcapteur.h decorateurcapteur.cpp
         capteurreservoir.h capteurreservoir.cpp
         capteurturbine.h capteurturbine.cpp
+        chargeurcsv.h chargeurcsv.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
