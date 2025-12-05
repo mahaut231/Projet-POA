@@ -3,3 +3,4 @@
 #include "EWIEGA46WW/moc_Mainwindow.cpp"
 #include "EWIEGA46WW/moc_Mainwindow1.cpp"
 #include "EWIEGA46WW/moc_Mainwindow2.cpp"
+#include "EWIEGA46WW/moc_qcustomplot.cpp"
