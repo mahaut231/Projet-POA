@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QDateTime>
 #include <QColor>
+#include <QList>
 #include "Centrale.h"
 
 namespace Ui {
@@ -28,17 +30,12 @@ private:
     Ui::MainWindow1 *ui;
     Centrale* centraleActuelle;
     QTimer* timer;
+    QList<QGraphicsView*> vuesGraphiques; // Liste des vues de graphiques
 
     // Méthodes pour le graphique
     void afficherGraphiquesDebits();
     void initialiserDonneesHistoriques();
-    void dessinerGraphiqueTurbine(QGraphicsScene* scene, Turbine* turbine,
-                                  int numeroTurbine, QColor couleur,
-                                  double xOffset, double yOffset,
-                                  double width, double height,
-                                  double margin, QDateTime debut,
-                                  QDateTime fin, double debitMin,
-                                  double debitMax);
+    QGraphicsScene* creerGraphiqueTurbine(Turbine* turbine, int numeroTurbine, QColor couleur);
 
     // Fonctions de production (conservées pour compatibilité)
     float fonctionT1(float du, float hc);
