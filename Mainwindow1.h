@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QGraphicsView>
 #include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 #include "Centrale.h"
 #include "Turbine.h"
 
@@ -25,6 +27,7 @@ public:
 
 private slots:
     void mettreAJourGraphique();
+    void appliquerChangementsDebit();
 
 private:
     Ui::MainWindow1 *ui;
@@ -34,9 +37,16 @@ private:
     QList<QGraphicsView*> vuesGraphiques;
     QGraphicsView* vuePuissance = nullptr;
 
+    // Champs de saisie pour les débits
+    QLineEdit* champsDebit[5];
+    QLabel* labelsDebit[5];
+    QPushButton* boutonChangerDebit;
+
     void initialiserDonneesHistoriques();
     void afficherGraphiquesDebits();
     void afficherGraphiquePuissanceTotale();
+    void creerChampsDebit();
+    void creerBoutonChangerDebit();
 
     QGraphicsScene* creerGraphiqueTurbine(Turbine* turbine, int numeroTurbine, QColor couleur);
     QGraphicsScene* creerGraphiquePuissanceTotale();

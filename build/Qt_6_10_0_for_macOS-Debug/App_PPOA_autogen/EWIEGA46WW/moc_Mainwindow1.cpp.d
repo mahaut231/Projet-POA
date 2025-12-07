@@ -950,7 +950,9 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextcursor.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextformat.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextoption.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
@@ -959,13 +961,18 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsView \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLineEdit \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QPushButton \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractbutton.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractscrollarea.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsscene.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsview.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlineedit.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qpushbutton.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qscrollarea.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \

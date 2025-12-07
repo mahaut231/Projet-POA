@@ -8,6 +8,9 @@
 #include <QPen>
 #include <QTimer>
 #include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QMessageBox>
 #include <cmath>
 
 MainWindow1::MainWindow1(QWidget *parent)
@@ -16,8 +19,15 @@ MainWindow1::MainWindow1(QWidget *parent)
     , centraleActuelle(nullptr)
     , timer(new QTimer(this))
     , labelCentrale(nullptr)
+    , boutonChangerDebit(nullptr)
 {
     ui->setupUi(this);
+
+    // Initialiser les champs de texte à nullptr
+    for (int i = 0; i < 5; i++) {
+        champsDebit[i] = nullptr;
+        labelsDebit[i] = nullptr;
+    }
 }
 
 MainWindow1::MainWindow1(Centrale* centrale, QWidget *parent)
@@ -26,11 +36,18 @@ MainWindow1::MainWindow1(Centrale* centrale, QWidget *parent)
     , centraleActuelle(centrale)
     , timer(new QTimer(this))
     , labelCentrale(nullptr)
+    , boutonChangerDebit(nullptr)
 {
     ui->setupUi(this);
 
-    // Agrandir la fenêtre pour accueillir les graphiques en 2x3
-    resize(1300, 750);
+    // Initialiser les champs de texte à nullptr
+    for (int i = 0; i < 5; i++) {
+        champsDebit[i] = nullptr;
+        labelsDebit[i] = nullptr;
+    }
+
+    // Agrandir la fenêtre pour accueillir les graphiques en 2x3 + zones de texte
+    resize(1300, 850);
 
     // Créer le label "Centrale 1" - simple texte blanc sur fond
     labelCentrale = new QLabel("Centrale 1", ui->centralwidget);
@@ -50,6 +67,12 @@ MainWindow1::MainWindow1(Centrale* centrale, QWidget *parent)
     afficherGraphiquesDebits();
     afficherGraphiquePuissanceTotale();
 
+    // Créer les champs de saisie de débit
+    creerChampsDebit();
+
+    // Créer le bouton pour appliquer les changements
+    creerBoutonChangerDebit();
+
     // Configurer le timer pour mise à jour toutes les 15 minutes
     connect(timer, &QTimer::timeout, this, &MainWindow1::mettreAJourGraphique);
     timer->start(900000); // 15 minutes en millisecondes
@@ -66,6 +89,14 @@ MainWindow1::~MainWindow1()
     }
     if (labelCentrale) {
         delete labelCentrale;
+    }
+    if (boutonChangerDebit) {
+        delete boutonChangerDebit;
+    }
+    // Nettoyer les champs de débit
+    for (int i = 0; i < 5; i++) {
+        if (champsDebit[i]) delete champsDebit[i];
+        if (labelsDebit[i]) delete labelsDebit[i];
     }
     delete ui;
 }
@@ -114,10 +145,8 @@ void MainWindow1::mettreAJourGraphique()
     for (size_t t = 0; t < turbines.size() && t < 5; t++) {
         Turbine* turbine = turbines[t];
 
-        // Générer un nouveau débit avec variation
-        long debitBase = 140 + (t * 5);
-        long variation = (rand() % 21) - 10;
-        long debit = debitBase + variation;
+        // Utiliser le débit actuel de la turbine
+        long debit = turbine->getdebits();
 
         turbine->getCapteur().ajouterMesure(debit, maintenant);
     }
@@ -125,6 +154,165 @@ void MainWindow1::mettreAJourGraphique()
     // Rafraîchir l'affichage
     afficherGraphiquesDebits();
     afficherGraphiquePuissanceTotale();
+}
+
+void MainWindow1::creerChampsDebit()
+{
+    if (!centraleActuelle) return;
+
+    std::vector<Turbine*> turbines = centraleActuelle->getListeTurbine();
+    int nbTurbines = std::min((int)turbines.size(), 5);
+
+    const int graphWidth = 400;
+    const int graphHeight = 300;
+    const int horizontalSpace = 20;
+    const int verticalSpace = 20;
+    const int startX = 20;
+    const int startY = 100;
+    const int inputHeight = 30;
+    const int inputYOffset = 10; // Espace entre le graphique et le champ
+
+    for (int t = 0; t < nbTurbines; t++) {
+        int row = t / 3;
+        int col = t % 3;
+
+        int x = startX + col * (graphWidth + horizontalSpace);
+        int y = startY + row * (graphHeight + verticalSpace) + graphHeight + inputYOffset;
+
+        // Créer le label centré
+        labelsDebit[t] = new QLabel(QString("Débit T%1 (m³/s):").arg(t+1), ui->centralwidget);
+        labelsDebit[t]->setGeometry(x + 40, y, 120, inputHeight);
+        labelsDebit[t]->setStyleSheet("QLabel { color: white; font-size: 11px; font-weight: bold; }");
+        labelsDebit[t]->show();
+
+        // Créer le champ de texte - fond noir, texte blanc
+        champsDebit[t] = new QLineEdit(ui->centralwidget);
+        champsDebit[t]->setGeometry(x + 165, y, 80, inputHeight);
+        champsDebit[t]->setPlaceholderText(QString::number(turbines[t]->getdebits()));
+        champsDebit[t]->setStyleSheet(
+            "QLineEdit { "
+            "background-color: black; "
+            "color: white; "
+            "border: 2px solid #3498db; "
+            "border-radius: 5px; "
+            "padding: 5px; "
+            "font-size: 12px; "
+            "font-weight: bold; "
+            "}"
+            "QLineEdit:focus { "
+            "border: 2px solid #2ecc71; "
+            "}"
+            "QLineEdit::placeholder { "
+            "color: #7f8c8d; "
+            "}"
+            );
+        champsDebit[t]->show();
+
+        // Ajouter un label pour la plage valide
+        QLabel* labelPlage = new QLabel(
+            QString("(%1-%2)").arg(turbines[t]->getpMin()).arg(turbines[t]->getpMax()),
+            ui->centralwidget
+            );
+        labelPlage->setGeometry(x + 250, y, 100, inputHeight);
+        labelPlage->setStyleSheet("QLabel { color: #95a5a6; font-size: 10px; }");
+        labelPlage->show();
+    }
+}
+
+void MainWindow1::creerBoutonChangerDebit()
+{
+    boutonChangerDebit = new QPushButton("Changer débit des turbines", ui->centralwidget);
+    boutonChangerDebit->setGeometry(500, 770, 300, 50);
+    boutonChangerDebit->setStyleSheet(
+        "QPushButton { "
+        "background-color: #3498db; "
+        "color: white; "
+        "border: none; "
+        "border-radius: 8px; "
+        "font-size: 14px; "
+        "font-weight: bold; "
+        "padding: 10px; "
+        "}"
+        "QPushButton:hover { "
+        "background-color: #2980b9; "
+        "}"
+        "QPushButton:pressed { "
+        "background-color: #21618c; "
+        "}"
+        );
+    boutonChangerDebit->show();
+
+    connect(boutonChangerDebit, &QPushButton::clicked, this, &MainWindow1::appliquerChangementsDebit);
+}
+
+void MainWindow1::appliquerChangementsDebit()
+{
+    if (!centraleActuelle) return;
+
+    std::vector<Turbine*> turbines = centraleActuelle->getListeTurbine();
+    int nbTurbines = std::min((int)turbines.size(), 5);
+
+    QDateTime maintenant = QDateTime::currentDateTime();
+    bool changementEffectue = false;
+    QString messagesErreur;
+
+    for (int t = 0; t < nbTurbines; t++) {
+        if (!champsDebit[t]) continue;
+
+        QString texte = champsDebit[t]->text().trimmed();
+
+        // Si le champ est vide, ajouter une mesure avec la valeur actuelle
+        if (texte.isEmpty()) {
+            Turbine* turbine = turbines[t];
+            long debitActuel = turbine->getdebits();
+            turbine->getCapteur().ajouterMesure(debitActuel, maintenant);
+            continue;
+        }
+
+        bool ok;
+        long nouveauDebit = texte.toLong(&ok);
+
+        if (!ok) {
+            messagesErreur += QString("Turbine %1: Valeur invalide\n").arg(t + 1);
+            continue;
+        }
+
+        Turbine* turbine = turbines[t];
+        long debitMin = turbine->getpMin();
+        long debitMax = turbine->getpMax();
+
+        // Vérifier que le débit est dans la plage valide
+        if (nouveauDebit < debitMin || nouveauDebit > debitMax) {
+            messagesErreur += QString("Turbine %1: Débit hors plage (%2-%3)\n")
+                                  .arg(t + 1).arg(debitMin).arg(debitMax);
+            continue;
+        }
+
+        // Appliquer le nouveau débit
+        turbine->setdebits(nouveauDebit);
+
+        // Ajouter une mesure avec le nouveau débit
+        turbine->getCapteur().ajouterMesure(nouveauDebit, maintenant);
+
+        // Vider le champ de texte et mettre à jour le placeholder
+        champsDebit[t]->clear();
+        champsDebit[t]->setPlaceholderText(QString::number(nouveauDebit));
+
+        changementEffectue = true;
+    }
+
+    // Afficher les erreurs s'il y en a
+    if (!messagesErreur.isEmpty()) {
+        QMessageBox::warning(this, "Erreurs de validation", messagesErreur);
+    }
+
+    // Toujours rafraîchir les graphiques
+    afficherGraphiquesDebits();
+    afficherGraphiquePuissanceTotale();
+
+    if (changementEffectue) {
+        QMessageBox::information(this, "Succès", "Les débits ont été mis à jour avec succès !");
+    }
 }
 
 void MainWindow1::afficherGraphiquesDebits()
@@ -418,8 +606,30 @@ QGraphicsScene* MainWindow1::creerGraphiqueTurbine(Turbine* turbine, int numeroT
     QDateTime maintenant = QDateTime::currentDateTime();
     QDateTime debut = maintenant.addSecs(-6 * 3600);
 
-    double debitMin = 100;
-    double debitMax = 200;
+    // Calculer automatiquement les limites de débit basées sur les données réelles
+    std::vector<MesureHistorique> historique = turbine->getCapteur().getHistorique();
+    double debitMin = turbine->getpMin();
+    double debitMax = turbine->getpMax();
+
+    // Si on a des données, ajuster les limites pour englober toutes les valeurs
+    if (!historique.empty()) {
+        double minObserve = debitMax;
+        double maxObserve = debitMin;
+
+        for (const auto& mesure : historique) {
+            if (mesure.timestamp >= debut) {
+                if (mesure.valeur < minObserve) minObserve = mesure.valeur;
+                if (mesure.valeur > maxObserve) maxObserve = mesure.valeur;
+            }
+        }
+
+        // Ajouter une marge de 10% pour l'affichage
+        if (minObserve < debitMax && maxObserve > debitMin) {
+            double marge = (maxObserve - minObserve) * 0.1;
+            debitMin = std::max((double)turbine->getpMin(), minObserve - marge);
+            debitMax = std::min((double)turbine->getpMax(), maxObserve + marge);
+        }
+    }
 
     // Fond blanc pour la zone de tracé
     scene->addRect(margin, margin, plotWidth, plotHeight, QPen(Qt::black, 1), QBrush(Qt::white));
@@ -496,7 +706,6 @@ QGraphicsScene* MainWindow1::creerGraphiqueTurbine(Turbine* turbine, int numeroT
 
     // Dessiner la courbe
     QPen curvePen(couleur, 3);
-    std::vector<MesureHistorique> historique = turbine->getCapteur().getHistorique();
 
     if (!historique.empty()) {
         QPointF lastPoint;
