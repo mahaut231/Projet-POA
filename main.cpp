@@ -32,18 +32,18 @@ int main(int argc, char *argv[]) {
     QString fichier = "/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/DataProjet2025.csv";
 
     // Création des capteurs
-    Capteur* capteurT1Base = new Capteur(20, 0, "Bon");
-    Capteur* capteurT2Base = new Capteur(21, 0, "Bon");
-    Capteur* capteurT3Base = new Capteur(22, 0, "Bon");
-    Capteur* capteurT4Base = new Capteur(23, 0, "Bon");
-    Capteur* capteurT5Base = new Capteur(24, 0, "Bon");
+    Capteur* capteurT1Base = new Capteur(20, 150, "Bon");
+    Capteur* capteurT2Base = new Capteur(21, 151, "Bon");
+    Capteur* capteurT3Base = new Capteur(22, 150, "Bon");
+    Capteur* capteurT4Base = new Capteur(23, 147, "Bon");
+    Capteur* capteurT5Base = new Capteur(24, 160, "Bon");
 
-    // Création des turbines
-    Turbine* turbine1 = new Turbine(1,158, false, "2020-01-01", *capteurT1Base);
-    Turbine* turbine2 = new Turbine(2, 141, false, "2020-01-01", *capteurT2Base);
+    // Création des turbines SANS débits initiaux (0 par défaut)
+    Turbine* turbine1 = new Turbine(1, 0, false, "2020-01-01", *capteurT1Base);
+    Turbine* turbine2 = new Turbine(2, 0, false, "2020-01-01", *capteurT2Base);
     Turbine* turbine3 = new Turbine(3, 0, false, "2020-01-01", *capteurT3Base);
-    Turbine* turbine4 = new Turbine(4, 140, false, "2020-01-01", *capteurT4Base);
-    Turbine* turbine5 = new Turbine(5, 140, false, "2020-01-01", *capteurT5Base);
+    Turbine* turbine4 = new Turbine(4, 0, false, "2020-01-01", *capteurT4Base);
+    Turbine* turbine5 = new Turbine(5, 0, false, "2020-01-01", *capteurT5Base);
 
     std::vector<Turbine*> turbines = {turbine1, turbine2, turbine3, turbine4, turbine5};
 
@@ -67,6 +67,18 @@ int main(int argc, char *argv[]) {
 
     int nbLignes = ChargeurCSV::getNombreLignes(fichier);
     qDebug() << "Nombre total de lignes:" << nbLignes << "\n";
+
+    // NOUVEAU : Synchroniser les débits des turbines avec la dernière valeur du CSV
+    qDebug() << "--- INITIALISATION DES DEBITS DEPUIS LE CSV ---";
+    for (size_t t = 0; t < turbines.size(); t++) {
+        std::vector<MesureHistorique> historique = turbines[t]->getCapteur().getHistorique();
+        if (!historique.empty()) {
+            long dernierDebit = historique.back().valeur;
+            turbines[t]->setdebits(dernierDebit);
+            qDebug() << "Turbine" << (t+1) << "initialisee avec debit:" << dernierDebit << "m³/s";
+        }
+    }
+    qDebug() << "";
 
     // Afficher mesures par capteur
     qDebug() << "--- MESURES CHARGEES DANS LES CAPTEURS ---";
