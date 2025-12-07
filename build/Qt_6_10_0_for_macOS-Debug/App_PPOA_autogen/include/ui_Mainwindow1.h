@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
@@ -23,7 +22,6 @@ class Ui_MainWindow1
 {
 public:
     QWidget *centralwidget;
-    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -34,9 +32,6 @@ public:
         MainWindow1->resize(800, 600);
         centralwidget = new QWidget(MainWindow1);
         centralwidget->setObjectName("centralwidget");
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(320, 90, 58, 16));
         MainWindow1->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow1);
         menubar->setObjectName("menubar");
@@ -54,7 +49,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow1)
     {
         MainWindow1->setWindowTitle(QCoreApplication::translate("MainWindow1", "MainWindow", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow1", "Centrale 1", nullptr));
     } // retranslateUi
 
 };

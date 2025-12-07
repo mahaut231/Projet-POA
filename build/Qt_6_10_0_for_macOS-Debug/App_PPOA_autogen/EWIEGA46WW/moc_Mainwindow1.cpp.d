@@ -794,9 +794,7 @@
   /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/observer.h \
   /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/subject.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QDateTime \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QList \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QString \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QTimer \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q17memory.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20iterator.h \
@@ -804,7 +802,6 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20utility.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q23utility.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qabstracteventdispatcher.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qalloc.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qanystringview.h \
@@ -815,7 +812,6 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic_cxx11.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasicatomic.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasictimer.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbindingstorage.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearray.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h \
@@ -837,10 +833,8 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdarwinhelpers.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdatastream.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdatetime.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdeadlinetimer.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdebug.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qendian.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qeventloop.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qexceptionhandling.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qflags.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qfloat16.h \
@@ -852,6 +846,7 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qhash.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qhashfunctions.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevice.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterable.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterator.h \
@@ -915,7 +910,6 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtenvironmentvariables.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtextstream.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtformat_impl.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtimer.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtnoop.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtpreprocessorsupport.h \
@@ -926,13 +920,13 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtversionchecks.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtypeinfo.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtypes.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qurl.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QColor \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qaction.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
@@ -949,25 +943,28 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpainter.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpen.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextoption.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
-  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsView \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractscrollarea.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsscene.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsview.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qscrollarea.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \

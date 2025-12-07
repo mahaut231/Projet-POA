@@ -2,13 +2,13 @@
 #define MAINWINDOW1_H
 
 #include <QMainWindow>
-#include <QTimer>
-#include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QDateTime>
-#include <QColor>
-#include <QList>
+#include <QLabel>
 #include "Centrale.h"
+#include "Turbine.h"
+
+class QTimer;
+class QGraphicsScene;
 
 namespace Ui {
 class MainWindow1;
@@ -30,14 +30,18 @@ private:
     Ui::MainWindow1 *ui;
     Centrale* centraleActuelle;
     QTimer* timer;
-    QList<QGraphicsView*> vuesGraphiques; // Liste des vues de graphiques
+    QLabel* labelCentrale;
+    QList<QGraphicsView*> vuesGraphiques;
+    QGraphicsView* vuePuissance = nullptr;
 
-    // Méthodes pour le graphique
-    void afficherGraphiquesDebits();
     void initialiserDonneesHistoriques();
-    QGraphicsScene* creerGraphiqueTurbine(Turbine* turbine, int numeroTurbine, QColor couleur);
+    void afficherGraphiquesDebits();
+    void afficherGraphiquePuissanceTotale();
 
-    // Fonctions de production (conservées pour compatibilité)
+    QGraphicsScene* creerGraphiqueTurbine(Turbine* turbine, int numeroTurbine, QColor couleur);
+    QGraphicsScene* creerGraphiquePuissanceTotale();
+
+    // Fonctions de production
     float fonctionT1(float du, float hc);
     float fonctionT2(float du, float hc);
     float fonctionT3(float du, float hc);

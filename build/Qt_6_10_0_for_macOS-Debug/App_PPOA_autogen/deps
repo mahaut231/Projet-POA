@@ -1204,7 +1204,6 @@ App_PPOA_autogen/timestamp: \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QAction \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QActionGroup \
-	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QColor \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QFileSystemModel \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QMatrix4x4 \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QMouseEvent \
@@ -1353,8 +1352,8 @@ App_PPOA_autogen/timestamp: \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportversion.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QCommonStyle \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
-	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsView \
+	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLayout \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QScrollerProperties \
