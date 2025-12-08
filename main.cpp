@@ -45,12 +45,23 @@ int main(int argc, char *argv[]) {
     Turbine* turbine4 = new Turbine(4, 0, false, "2020-01-01", *capteurT4Base);
     Turbine* turbine5 = new Turbine(5, 0, false, "2020-01-01", *capteurT5Base);
 
+    Turbine* turbine1b = new Turbine(1, 0, false, "2020-01-01", *capteurT1Base);
+    Turbine* turbine2b = new Turbine(2, 0, false, "2020-01-01", *capteurT2Base);
+    Turbine* turbine3b = new Turbine(3, 0, false, "2020-01-01", *capteurT3Base);
+    Turbine* turbine4b = new Turbine(4, 0, false, "2020-01-01", *capteurT4Base);
+    Turbine* turbine5b = new Turbine(5, 0, false, "2020-01-01", *capteurT5Base);
+
     std::vector<Turbine*> turbines = {turbine1, turbine2, turbine3, turbine4, turbine5};
+    std::vector<Turbine*> turbines2 = {turbine1b, turbine2b, turbine3b, turbine4b, turbine5b};
 
     Capteur capteurAmont(1, 137890, "Bon");
     Capteur capteurAval(2, 103550, "Bon");
     Reservoire reservoire(1, capteurAmont, capteurAval);
+    Reservoire reservoire2(1, capteurAmont, capteurAval);
+
     Centrale* centrale = new Centrale(1, 137.90, 103.77, turbines, reservoire);
+    Centrale* centrale2 = new Centrale(2, 137.90, 103.77, turbines2, reservoire2);
+
 
     qDebug() << "Centrale creee avec 5 turbines";
     qDebug() << "Hauteur de chute:" << (137.90 - 103.77) << "m\n";
@@ -102,13 +113,11 @@ int main(int argc, char *argv[]) {
     qDebug() << "              FIN DU TEST               ";
     qDebug() << "========================================\n";
 
-    // ================== AFFICHER LA FENETRE ==================
-    //MainWindow1 w1(centrale);  // important : passer la centrale
-     //w1.show();
-    MainWindow2 w2(centrale);
+    MainWindow1 w1(centrale);
+     w1.show();
+    MainWindow2 w2(centrale2);
      w2.show();
 
-    // NE PAS supprimer les objets ici, faire le cleanup après app.exec()
     int ret = app.exec();
 
     // ----- nettoyage après fermeture de la fenêtre -----

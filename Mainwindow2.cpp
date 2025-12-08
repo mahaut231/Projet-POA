@@ -82,7 +82,6 @@ MainWindow2::MainWindow2(Centrale* centrale, QWidget *parent)
 
     resize(1300, 900);
 
-    // Création du label
     try {
         labelCentrale = new QLabel("Centrale 2", ui->centralwidget);
         QFont labelFont;
@@ -100,7 +99,6 @@ MainWindow2::MainWindow2(Centrale* centrale, QWidget *parent)
 
     initialiserDonneesHistoriques();
 
-    // Afficher les graphiques avec protection
     try {
         qDebug() << "Début afficherGraphiquesDebits()...";
         afficherGraphiquesDebits();
@@ -156,31 +154,45 @@ void MainWindow2::initialiserDonneesHistoriques()
 
     std::vector<Turbine*> turbines = centraleActuelle->getListeTurbine();
 
-    // VÉRIFICATION CRITIQUE : Y a-t-il des données CSV ?
     bool donneesCsvPresentes = false;
     for (size_t t = 0; t < turbines.size() && t < 5; t++) {
-        if (!turbines[t]->getCapteur().getHistorique().empty()) {
+        if (turbines[t]->getCapteur().getHistorique().size() >= 24) {
             donneesCsvPresentes = true;
             break;
         }
     }
 
-    if (!donneesCsvPresentes) {
-        qDebug() << "ATTENTION: Aucune donnée CSV trouvée pour MainWindow2!";
-        qDebug() << "MainWindow2 nécessite des données CSV pour fonctionner.";
+    if (donneesCsvPresentes) {
+        qDebug() << "MainWindow2: Données CSV déjà présentes, pas besoin de simuler";
         return;
     }
 
-    // Vérifier que toutes les turbines ont assez de données
-    for (size_t t = 0; t < turbines.size() && t < 5; t++) {
-        int nbMesures = turbines[t]->getCapteur().getHistorique().size();
-        qDebug() << "MainWindow2 - Turbine" << (t+1) << ":" << nbMesures << "mesures disponibles";
+    qDebug() << "MainWindow2: Simulation de données (aucune donnée CSV trouvée)";
 
-        if (nbMesures < 24) {
-            qDebug() << "ATTENTION: Turbine" << (t+1) << "n'a pas assez de données (minimum 24 requis)";
+    for (size_t t = 0; t < turbines.size() && t < 5; t++) {
+        turbines[t]->getCapteur().viderHistorique();
+    }
+
+    QDateTime maintenant = QDateTime::currentDateTime();
+    int totalMesures = 192; // 48h * 4 mesures/heure = 192 mesures
+
+    for (int i = 0; i < totalMesures; i++) {
+        QDateTime timestamp = maintenant.addSecs(-(totalMesures - i) * 15 * 60);
+
+        for (size_t t = 0; t < turbines.size() && t < 5; t++) {
+            Turbine* turbine = turbines[t];
+
+            long debitBase = 140 + (t * 5);
+            long variation = (rand() % 21) - 10;
+            long debit = debitBase + variation;
+
+            turbine->getCapteur().ajouterMesure(debit, timestamp);
         }
     }
+
+    qDebug() << "MainWindow2: " << totalMesures << "mesures simulées pour chaque turbine";
 }
+
 
 void MainWindow2::mettreAJourGraphique()
 {
@@ -378,6 +390,8 @@ void MainWindow2::appliquerChangementsDebit()
         return;
     }
 
+    std::map<int, long> nouveauxDebits;
+
     for (int t = 0; t < nbTurbines; t++) {
         if (!champsDebit[t]) continue;
 
@@ -404,20 +418,26 @@ void MainWindow2::appliquerChangementsDebit()
             continue;
         }
 
-
-        turbine->setdebits(nouveauDebit);
-        champsDebit[t]->clear();
-        champsDebit[t]->setPlaceholderText(QString::number(nouveauDebit));
-
+        nouveauxDebits[t] = nouveauDebit;
         changementEffectue = true;
+    }
+
+    if (!messagesErreur.isEmpty()) {
+        QMessageBox::warning(this, "Erreurs de validation", messagesErreur);
     }
 
     if (changementEffectue) {
         for (int t = 0; t < nbTurbines; t++) {
             Turbine* turbine = turbines[t];
-            long nouveauDebit = turbine->getdebits();
 
-            // Accéder à l'historique et modifier les valeurs au milieu
+            long debitAUtiliser;
+            if (nouveauxDebits.find(t) != nouveauxDebits.end()) {
+                debitAUtiliser = nouveauxDebits[t];
+                turbine->setdebits(debitAUtiliser);
+            } else {
+                debitAUtiliser = turbine->getdebits();
+            }
+
             std::vector<MesureHistorique>& historique = turbine->getCapteur().getHistoriqueModifiable();
 
             if (!historique.empty()) {
@@ -427,28 +447,32 @@ void MainWindow2::appliquerChangementsDebit()
                 int indexDebut = std::max(0, indexMilieu - mesuresA6h / 2);
                 int indexFin = std::min(totalMesures, indexDebut + mesuresA6h);
 
-                // Modifier TOUTES les valeurs dans la fenêtre du milieu
-                for (int i = indexDebut; i < indexFin && i < totalMesures; i++) {
-                    historique[i].valeur = nouveauDebit;
+                QDateTime timestampNouveau;
+                if (indexFin > 0 && indexFin <= (int)historique.size()) {
+                    timestampNouveau = historique[indexFin - 1].timestamp.addSecs(15 * 60);
+                } else {
+                    timestampNouveau = QDateTime::currentDateTime();
                 }
 
-                qDebug() << "Turbine" << (t+1) << ": Modifié les mesures de"
-                         << indexDebut << "à" << indexFin << "avec débit" << nouveauDebit;
+                MesureHistorique nouvelleMesure(debitAUtiliser, timestampNouveau);
+
+                historique.insert(historique.begin() + indexFin, nouvelleMesure);
+
+                qDebug() << "Turbine" << (t+1) << ": Ajouté 1 mesure à la fin de la fenêtre (index"
+                         << indexFin << ") avec débit" << debitAUtiliser;
+            }
+
+            if (nouveauxDebits.find(t) != nouveauxDebits.end() && champsDebit[t]) {
+                champsDebit[t]->clear();
+                champsDebit[t]->setPlaceholderText(QString::number(debitAUtiliser));
             }
         }
-    }
 
-    if (!messagesErreur.isEmpty()) {
-        QMessageBox::warning(this, "Erreurs de validation", messagesErreur);
-    }
+        afficherGraphiquesDebits();
+        afficherGraphiquePuissanceTotale();
 
-    afficherGraphiquesDebits();
-    afficherGraphiquePuissanceTotale();
-
-    if (changementEffectue) {
         QMessageBox::information(this, "Succès",
-                                 "Les débits ont été mis à jour avec succès !\n"
-                                 "Les valeurs au milieu du CSV ont été modifiées.");
+                                 "Les débits ont été mis à jour avec succès !\n");
     }
 }
 
@@ -464,7 +488,6 @@ QGraphicsScene* MainWindow2::creerGraphiqueTurbine(Turbine* turbine, int numeroT
 
     std::vector<MesureHistorique> historique = turbine->getCapteur().getHistorique();
 
-    // VÉRIFICATION CRITIQUE
     if (historique.empty()) {
         qDebug() << "ERREUR: Turbine" << numeroTurbine << "n'a pas de données!";
         scene->setSceneRect(0, 0, width, height);
@@ -481,56 +504,43 @@ QGraphicsScene* MainWindow2::creerGraphiqueTurbine(Turbine* turbine, int numeroT
 
     int totalMesures = historique.size();
 
-    // VÉRIFICATION: Assez de mesures pour afficher 6h au milieu ?
-    if (totalMesures < 24) {
-        qDebug() << "ATTENTION: Turbine" << numeroTurbine << "seulement" << totalMesures << "mesures (24 recommandées)";
-    }
-
     int mesuresA6h = std::min(24, totalMesures);
     int indexMilieu = totalMesures / 2;
     int indexDebut = std::max(0, indexMilieu - mesuresA6h / 2);
     int indexFin = std::min(totalMesures, indexDebut + mesuresA6h);
 
-    // VÉRIFICATION: Indices valides ?
+    // Protection
     if (indexDebut >= totalMesures || indexFin > totalMesures || indexDebut >= indexFin) {
         qDebug() << "ERREUR: Indices invalides pour Turbine" << numeroTurbine;
-        qDebug() << "  Total:" << totalMesures << "Début:" << indexDebut << "Fin:" << indexFin;
         scene->setSceneRect(0, 0, width, height);
-        scene->addRect(margin, margin, plotWidth, plotHeight, QPen(Qt::black, 1), QBrush(Qt::white));
         return scene;
     }
 
-    QDateTime debut, fin;
-    if (indexDebut < (int)historique.size() && indexFin > 0) {
-        debut = historique[indexDebut].timestamp;
-        fin = historique[std::min(indexFin - 1, (int)historique.size() - 1)].timestamp;
-    } else {
-        qDebug() << "ERREUR: Impossible d'accéder aux timestamps";
-        debut = QDateTime::currentDateTime().addSecs(-6 * 3600);
-        fin = QDateTime::currentDateTime();
-    }
+    QDateTime debut = historique[indexDebut].timestamp;
+    QDateTime fin = historique[std::min(indexFin - 1, (int)historique.size() - 1)].timestamp;
 
     double debitMin = turbine->getpMin();
     double debitMax = turbine->getpMax();
 
-    if (indexDebut < indexFin && indexFin <= totalMesures) {
-        double minObserve = debitMax;
-        double maxObserve = debitMin;
+    double minObserve = debitMax;
+    double maxObserve = debitMin;
 
-        for (int i = indexDebut; i < indexFin; i++) {
-            if (historique[i].valeur < minObserve) minObserve = historique[i].valeur;
-            if (historique[i].valeur > maxObserve) maxObserve = historique[i].valeur;
-        }
-
-        if (minObserve < debitMax && maxObserve > debitMin) {
-            double marge = (maxObserve - minObserve) * 0.1;
-            debitMin = std::max((double)turbine->getpMin(), minObserve - marge);
-            debitMax = std::min((double)turbine->getpMax(), maxObserve + marge);
-        }
+    for (int i = indexDebut; i < indexFin; i++) {
+        if (historique[i].valeur < minObserve) minObserve = historique[i].valeur;
+        if (historique[i].valeur > maxObserve) maxObserve = historique[i].valeur;
     }
 
+    if (minObserve < debitMax && maxObserve > debitMin) {
+        double marge = (maxObserve - minObserve) * 0.1;
+        if (marge < 1) marge = 10; // Marge minimale
+        debitMin = std::max((double)turbine->getpMin(), minObserve - marge);
+        debitMax = std::min((double)turbine->getpMax(), maxObserve + marge);
+    }
+
+    // Fond blanc
     scene->addRect(margin, margin, plotWidth, plotHeight, QPen(Qt::black, 1), QBrush(Qt::white));
 
+    // Grille
     QPen gridPen(Qt::lightGray, 1, Qt::DotLine);
     for (int i = 1; i < 4; i++) {
         double y = margin + plotHeight - (plotHeight * i / 4.0);
@@ -541,11 +551,13 @@ QGraphicsScene* MainWindow2::creerGraphiqueTurbine(Turbine* turbine, int numeroT
         scene->addLine(x, margin, x, margin + plotHeight, gridPen);
     }
 
+    // Axes
     QPen axisPen(Qt::black, 2);
     scene->addLine(margin, margin + plotHeight, margin + plotWidth, margin + plotHeight, axisPen);
     scene->addLine(margin, margin, margin, margin + plotHeight, axisPen);
 
-    QString titre = QString("Turbine %1 - Milieu CSV").arg(numeroTurbine);
+    // Titre
+    QString titre = QString("Turbine %1").arg(numeroTurbine);
     QGraphicsTextItem *title = scene->addText(titre);
     QFont titleFont = title->font();
     titleFont.setPointSize(12);
@@ -554,6 +566,7 @@ QGraphicsScene* MainWindow2::creerGraphiqueTurbine(Turbine* turbine, int numeroT
     title->setDefaultTextColor(couleur);
     title->setPos(width/2 - title->boundingRect().width()/2, 5);
 
+    // Labels
     QGraphicsTextItem *yLabel = scene->addText("Débit (m³/s)");
     QFont labelFont = yLabel->font();
     labelFont.setPointSize(10);
@@ -569,7 +582,10 @@ QGraphicsScene* MainWindow2::creerGraphiqueTurbine(Turbine* turbine, int numeroT
     QFont tickFont;
     tickFont.setPointSize(9);
 
+    // Graduations X
     qint64 dureeSecondes = debut.secsTo(fin);
+    if (dureeSecondes == 0) dureeSecondes = 6 * 3600;
+
     for (int i = 0; i <= 6; i++) {
         double x = margin + (plotWidth * i / 6.0);
         scene->addLine(x, margin + plotHeight, x, margin + plotHeight + 8, axisPen);
@@ -582,6 +598,7 @@ QGraphicsScene* MainWindow2::creerGraphiqueTurbine(Turbine* turbine, int numeroT
         text->setPos(x - text->boundingRect().width()/2, margin + plotHeight + 10);
     }
 
+    // Graduations Y
     for (int i = 0; i <= 4; i++) {
         double y = margin + plotHeight - (plotHeight * i / 4.0);
         scene->addLine(margin - 8, y, margin, y, axisPen);
@@ -596,53 +613,47 @@ QGraphicsScene* MainWindow2::creerGraphiqueTurbine(Turbine* turbine, int numeroT
         text->setPos(textX, textY);
     }
 
-    // CORRECTION dans creerGraphiqueTurbine - Ligne ~570
-
     QPen curvePen(couleur, 3);
+    QPointF lastPoint;
+    bool first = true;
 
-    if (indexDebut < indexFin) {
-        QPointF lastPoint;
-        bool first = true;
+    for (int i = indexDebut; i < indexFin && i < (int)historique.size(); i++) {
+        const auto& mesure = historique[i];
+        qint64 secondesDepuisDebut = debut.secsTo(mesure.timestamp);
 
-        // ⚠️ CORRECTION ICI : Vérifier AVANT d'accéder à historique[i]
-        for (int i = indexDebut; i < indexFin && i < (int)historique.size(); i++) {
-            const auto& mesure = historique[i];
-            qint64 secondesDepuisDebut = debut.secsTo(mesure.timestamp);
+        double x = margin + (plotWidth * secondesDepuisDebut / (double)dureeSecondes);
 
-            double x = margin + (plotWidth * secondesDepuisDebut / (double)dureeSecondes);
+        double debit = mesure.valeur;
+        if (debit < debitMin) debit = debitMin;
+        if (debit > debitMax) debit = debitMax;
 
-            double debit = mesure.valeur;
-            if (debit < debitMin) debit = debitMin;
-            if (debit > debitMax) debit = debitMax;
+        double ratioDebit = (debit - debitMin) / (debitMax - debitMin);
+        double y = margin + plotHeight - (plotHeight * ratioDebit);
 
-            double y = margin + plotHeight - ((debit - debitMin) / (debitMax - debitMin) * plotHeight);
+        QPointF currentPoint(x, y);
 
-            QPointF currentPoint(x, y);
-
-            if (!first) {
-                scene->addLine(QLineF(lastPoint, currentPoint), curvePen);
-            }
-
-            QPen pointPen(couleur, 1);
-            QBrush pointBrush(couleur);
-            scene->addEllipse(x - 3, y - 3, 6, 6, pointPen, pointBrush);
-
-            lastPoint = currentPoint;
-            first = false;
+        if (!first) {
+            scene->addLine(QLineF(lastPoint, currentPoint), curvePen);
         }
 
-        // ⚠️ CORRECTION ICI AUSSI : Vérifier avant d'accéder
-        if (indexMilieu >= 0 && indexMilieu < (int)historique.size()) {
-            double valeurMilieu = historique[indexMilieu].valeur;
-            QString valeurText = QString("Milieu: %1 m³/s").arg(valeurMilieu, 0, 'f', 1);
-            QGraphicsTextItem *valeur = scene->addText(valeurText);
-            QFont valeurFont = valeur->font();
-            valeurFont.setPointSize(10);
-            valeurFont.setBold(true);
-            valeur->setFont(valeurFont);
-            valeur->setDefaultTextColor(couleur);
-            valeur->setPos(margin + 5, margin + 5);
-        }
+        QPen pointPen(couleur, 1);
+        QBrush pointBrush(couleur);
+        scene->addEllipse(x - 3, y - 3, 6, 6, pointPen, pointBrush);
+
+        lastPoint = currentPoint;
+        first = false;
+    }
+
+    if (indexFin > 0 && indexFin - 1 < (int)historique.size()) {
+        double valeurActuelle = historique[indexFin - 1].valeur;
+        QString valeurText = QString("Actuel: %1 m³/s").arg(valeurActuelle, 0, 'f', 1);
+        QGraphicsTextItem *valeur = scene->addText(valeurText);
+        QFont valeurFont = valeur->font();
+        valeurFont.setPointSize(10);
+        valeurFont.setBold(true);
+        valeur->setFont(valeurFont);
+        valeur->setDefaultTextColor(couleur);
+        valeur->setPos(margin + 5, margin + 5);
     }
 
     scene->setSceneRect(0, 0, width, height);
@@ -669,7 +680,6 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
     std::vector<MesureHistorique> historique = turbines[0]->getCapteur().getHistorique();
 
     if (historique.empty()) {
-        qDebug() << "ERREUR: Pas de données pour le graphique de puissance totale";
         scene->setSceneRect(0, 0, width, height);
         return scene;
     }
@@ -680,21 +690,56 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
     int indexDebut = std::max(0, indexMilieu - mesuresA6h / 2);
     int indexFin = std::min(totalMesures, indexDebut + mesuresA6h);
 
-    QDateTime debut, fin;
-    if (indexDebut < (int)historique.size() && indexFin > 0) {
-        debut = historique[indexDebut].timestamp;
-        fin = historique[std::min(indexFin - 1, (int)historique.size() - 1)].timestamp;
-    } else {
-        debut = QDateTime::currentDateTime().addSecs(-6 * 3600);
-        fin = QDateTime::currentDateTime();
-    }
+    QDateTime debut = historique[indexDebut].timestamp;
+    QDateTime fin = historique[std::min(indexFin - 1, (int)historique.size() - 1)].timestamp;
 
     float hc = 35.0;
     double puissanceMin = 0;
     double puissanceMax = 100;
 
+    std::set<QDateTime> allTimestamps;
+    for (size_t t = 0; t < turbines.size() && t < 5; t++) {
+        std::vector<MesureHistorique> hist = turbines[t]->getCapteur().getHistorique();
+        for (int i = indexDebut; i < indexFin && i < (int)hist.size(); i++) {
+            allTimestamps.insert(hist[i].timestamp);
+        }
+    }
+
+    for (const QDateTime& timestamp : allTimestamps) {
+        double puissanceTotale = 0;
+
+        for (size_t t = 0; t < turbines.size() && t < 5; t++) {
+            std::vector<MesureHistorique> hist = turbines[t]->getCapteur().getHistorique();
+
+            for (const auto& mesure : hist) {
+                if (mesure.timestamp == timestamp) {
+                    float debit = mesure.valeur;
+                    float puissance = 0;
+
+                    switch(t) {
+                    case 0: puissance = fonctionT1(debit, hc); break;
+                    case 1: puissance = fonctionT2(debit, hc); break;
+                    case 2: puissance = fonctionT3(debit, hc); break;
+                    case 3: puissance = fonctionT4(debit, hc); break;
+                    case 4: puissance = fonctionT5(debit, hc); break;
+                    }
+
+                    puissanceTotale += puissance;
+                    break;
+                }
+            }
+        }
+
+        if (puissanceTotale > puissanceMax) {
+            puissanceMax = puissanceTotale;
+        }
+    }
+
+    puissanceMax = puissanceMax * 1.1;
+
     scene->addRect(margin, margin, plotWidth, plotHeight, QPen(Qt::black, 1), QBrush(Qt::white));
 
+    // Grille
     QPen gridPen(Qt::lightGray, 1, Qt::DotLine);
     for (int i = 1; i < 4; i++) {
         double y = margin + plotHeight - (plotHeight * i / 4.0);
@@ -705,11 +750,13 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
         scene->addLine(x, margin, x, margin + plotHeight, gridPen);
     }
 
+    // Axes
     QPen axisPen(Qt::black, 2);
     scene->addLine(margin, margin + plotHeight, margin + plotWidth, margin + plotHeight, axisPen);
     scene->addLine(margin, margin, margin, margin + plotHeight, axisPen);
 
-    QString titre = "Puissance Totale - Milieu CSV";
+    // Titre
+    QString titre = "Puissance Totale";
     QGraphicsTextItem *title = scene->addText(titre);
     QFont titleFont = title->font();
     titleFont.setPointSize(12);
@@ -718,6 +765,7 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
     title->setDefaultTextColor(QColor(231, 76, 60));
     title->setPos(width/2 - title->boundingRect().width()/2, 5);
 
+    // Labels
     QGraphicsTextItem *yLabel = scene->addText("Puissance (MW)");
     QFont labelFont = yLabel->font();
     labelFont.setPointSize(10);
@@ -733,7 +781,10 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
     QFont tickFont;
     tickFont.setPointSize(9);
 
+    // Graduations X
     qint64 dureeSecondes = debut.secsTo(fin);
+    if (dureeSecondes == 0) dureeSecondes = 6 * 3600;
+
     for (int i = 0; i <= 6; i++) {
         double x = margin + (plotWidth * i / 6.0);
         scene->addLine(x, margin + plotHeight, x, margin + plotHeight + 8, axisPen);
@@ -746,6 +797,7 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
         text->setPos(x - text->boundingRect().width()/2, margin + plotHeight + 10);
     }
 
+    // Graduations Y
     for (int i = 0; i <= 4; i++) {
         double y = margin + plotHeight - (plotHeight * i / 4.0);
         scene->addLine(margin - 8, y, margin, y, axisPen);
@@ -758,15 +810,6 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
         double textX = margin - text->boundingRect().width() - 10;
         double textY = y - text->boundingRect().height() / 2;
         text->setPos(textX, textY);
-    }
-
-    // Collecter tous les timestamps uniques dans la fenêtre
-    std::set<QDateTime> allTimestamps;
-    for (size_t t = 0; t < turbines.size() && t < 5; t++) {
-        std::vector<MesureHistorique> hist = turbines[t]->getCapteur().getHistorique();
-        for (int i = indexDebut; i < indexFin && i < (int)hist.size(); i++) {
-            allTimestamps.insert(hist[i].timestamp);
-        }
     }
 
     QPen curvePen(QColor(231, 76, 60), 3);
@@ -803,10 +846,8 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
 
         double x = margin + (plotWidth * secondesDepuisDebut / (double)dureeSecondes);
 
-        if (puissanceTotale < puissanceMin) puissanceTotale = puissanceMin;
-        if (puissanceTotale > puissanceMax) puissanceMax = puissanceTotale;
-
-        double y = margin + plotHeight - ((puissanceTotale - puissanceMin) / (puissanceMax - puissanceMin) * plotHeight);
+        double ratioP = (puissanceTotale - puissanceMin) / (puissanceMax - puissanceMin);
+        double y = margin + plotHeight - (plotHeight * ratioP);
 
         QPointF currentPoint(x, y);
 
@@ -824,7 +865,7 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
     }
 
     if (puissanceActuelle > 0) {
-        QString valeurText = QString("Milieu: %1 MW").arg(puissanceActuelle, 0, 'f', 2);
+        QString valeurText = QString("Actuel: %1 MW").arg(puissanceActuelle, 0, 'f', 2);
         QGraphicsTextItem *valeur = scene->addText(valeurText);
         QFont valeurFont = valeur->font();
         valeurFont.setPointSize(10);
@@ -838,7 +879,6 @@ QGraphicsScene* MainWindow2::creerGraphiquePuissanceTotale()
     return scene;
 }
 
-// Fonctions de production (identiques à MainWindow1)
 float MainWindow2::fonctionT1(float du, float hc)
 {
     float p00 = 1.102, p10 = -0.03187, p01 = -0.04866, p11 = 0.003308;

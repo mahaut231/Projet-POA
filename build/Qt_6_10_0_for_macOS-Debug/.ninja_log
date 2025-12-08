@@ -1,37 +1,70 @@
 # ninja log v6
-1490	2169	1765149624038152641	CMakeFiles/App_PPOA.dir/capteurturbine.cpp.o	2c014d977d322108
-52	990	1765149642043797670	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
-52	1045	1765149642043895712	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
-466	1608	1764955591338109443	CMakeFiles/App_PPOA.dir/manager.cpp.o	b47db650b7fe6389
+287	1539	1765149622834983124	CMakeFiles/App_PPOA.dir/Reservoire.cpp.o	ccd98876ac911de7
+368	1622	1765149978171825531	CMakeFiles/App_PPOA.dir/main.cpp.o	6ebedf15cd076a58
+573	1257	1762728214909019863	CMakeFiles/App_PPOA.dir/mainwindow.cpp.o	6413c01617fb50e6
+465	1529	1764955591337691357	CMakeFiles/App_PPOA.dir/Utilisateur.cpp.o	5c968ed0bcaa0616
+573	1289	1762728214909117196	CMakeFiles/App_PPOA.dir/login.cpp.o	7dcae2c25019c60e
+14	57	1765161241528659426	App_PPOA_autogen/timestamp	bb9ebfabf9542809
+368	3883	1765149978171676613	CMakeFiles/App_PPOA.dir/App_PPOA_autogen/mocs_compilation.cpp.o	dfa0459e2df0ef83
+1539	2216	1765149624086736171	CMakeFiles/App_PPOA.dir/chargeurcsv.cpp.o	9c0f1280f7b471af
+290	1573	1765149622837651272	CMakeFiles/App_PPOA.dir/capteurreservoir.cpp.o	c22faf894d16aecb
+14	57	1765161241528659426	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+287	1601	1765149622834546287	CMakeFiles/App_PPOA.dir/Turbine.cpp.o	cd382c57f2fa9e87
+288	1545	1765149622835330377	CMakeFiles/App_PPOA.dir/Centrale.cpp.o	d8ec39b808e93e0d
+1529	2392	1764955592401851514	CMakeFiles/App_PPOA.dir/gestionnairecomptes.cpp.o	21761337af63f3ba
+14	57	1765161241528659426	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+57	781	1765161241571765661	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
+1318	1482	1765160921757628102	App_PPOA.app/Contents/MacOS/App_PPOA	cc59e78e14dd7df1
+83	1318	1765160920522455873	CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.o	a438833317f1fbf9
 1694	5633	1764955592566214775	CMakeFiles/App_PPOA.dir/qcustomplot.cpp.o	88aa9e336461b3c7
 287	1661	1765149622834642413	CMakeFiles/App_PPOA.dir/Capteur.cpp.o	9b277314b708fc9b
-52	850	1765149642043640252	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
-1064	1227	1765149643056168223	App_PPOA.app/Contents/MacOS/App_PPOA	cc59e78e14dd7df1
-52	1064	1765149642043982421	CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.o	a438833317f1fbf9
-11	51	1765149642003074372	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
-1529	2392	1764955592401851514	CMakeFiles/App_PPOA.dir/gestionnairecomptes.cpp.o	21761337af63f3ba
-288	1545	1765149622835330377	CMakeFiles/App_PPOA.dir/Centrale.cpp.o	d8ec39b808e93e0d
-287	1601	1765149622834546287	CMakeFiles/App_PPOA.dir/Turbine.cpp.o	cd382c57f2fa9e87
+14	57	1765161241528659426	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
 289	1490	1765149622836989766	CMakeFiles/App_PPOA.dir/decorateurcapteur.cpp.o	6b8b4a226c2eb2e8
-11	51	1765149642003074372	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
-11	51	1765149642003074372	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
-290	1573	1765149622837651272	CMakeFiles/App_PPOA.dir/capteurreservoir.cpp.o	c22faf894d16aecb
-1539	2216	1765149624086736171	CMakeFiles/App_PPOA.dir/chargeurcsv.cpp.o	9c0f1280f7b471af
-286	3908	1765149622834165076	CMakeFiles/App_PPOA.dir/App_PPOA_autogen/mocs_compilation.cpp.o	dfa0459e2df0ef83
-11	51	1765149642003074372	App_PPOA_autogen/timestamp	bb9ebfabf9542809
-573	1289	1762728214909117196	CMakeFiles/App_PPOA.dir/login.cpp.o	7dcae2c25019c60e
-465	1529	1764955591337691357	CMakeFiles/App_PPOA.dir/Utilisateur.cpp.o	5c968ed0bcaa0616
-573	1257	1762728214909019863	CMakeFiles/App_PPOA.dir/mainwindow.cpp.o	6413c01617fb50e6
-286	1854	1765149622834291368	CMakeFiles/App_PPOA.dir/main.cpp.o	6ebedf15cd076a58
-287	1539	1765149622834983124	CMakeFiles/App_PPOA.dir/Reservoire.cpp.o	ccd98876ac911de7
-13	368	1765149978161103000	App_PPOA_autogen/timestamp	bb9ebfabf9542809
-13	368	1765149978161103000	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
-13	368	1765149978161103000	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
-13	368	1765149978161103000	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
-368	1509	1765149978171921157	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
-368	1622	1765149978171825531	CMakeFiles/App_PPOA.dir/main.cpp.o	6ebedf15cd076a58
-368	1659	1765149978172006241	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
-368	1728	1765149978172096492	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
-368	1802	1765149978172190701	CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.o	a438833317f1fbf9
-368	3883	1765149978171676613	CMakeFiles/App_PPOA.dir/App_PPOA_autogen/mocs_compilation.cpp.o	dfa0459e2df0ef83
-3883	4093	1765149981686807753	App_PPOA.app/Contents/MacOS/App_PPOA	cc59e78e14dd7df1
+466	1608	1764955591338109443	CMakeFiles/App_PPOA.dir/manager.cpp.o	b47db650b7fe6389
+58	978	1765161241572029788	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
+58	919	1765161241571927954	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
+1490	2169	1765149624038152641	CMakeFiles/App_PPOA.dir/capteurturbine.cpp.o	2c014d977d322108
+12	51	1765161259842483290	App_PPOA_autogen/timestamp	bb9ebfabf9542809
+12	51	1765161259842483290	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+12	51	1765161259842483290	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
+12	51	1765161259842483290	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+51	705	1765161259881269113	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
+51	842	1765161259881450698	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
+51	916	1765161259881558199	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
+8	41	1765161266884155457	App_PPOA_autogen/timestamp	bb9ebfabf9542809
+8	41	1765161266884155457	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+8	41	1765161266884155457	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
+8	41	1765161266884155457	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+42	682	1765161266918199866	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
+42	851	1765161266918343659	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
+42	952	1765161266918442409	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
+42	998	1765161266918530493	CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.o	a438833317f1fbf9
+998	1269	1765161267874569517	App_PPOA.app/Contents/MacOS/App_PPOA	cc59e78e14dd7df1
+13	59	1765161477927951789	App_PPOA_autogen/timestamp	bb9ebfabf9542809
+13	59	1765161477927951789	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+13	59	1765161477927951789	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
+13	59	1765161477927951789	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+60	787	1765161477975123183	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
+60	944	1765161477975242768	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
+60	958	1765161477974918057	CMakeFiles/App_PPOA.dir/main.cpp.o	6ebedf15cd076a58
+60	1001	1765161477975345852	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
+60	1013	1765161477975443394	CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.o	a438833317f1fbf9
+1013	1169	1765161478928798729	App_PPOA.app/Contents/MacOS/App_PPOA	cc59e78e14dd7df1
+15	54	1765161752398411440	App_PPOA_autogen/timestamp	bb9ebfabf9542809
+15	54	1765161752398411440	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+15	54	1765161752398411440	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
+15	54	1765161752398411440	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+55	726	1765161752438401315	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
+55	882	1765161752438500524	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
+55	925	1765161752438589692	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
+55	981	1765161752438675567	CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.o	a438833317f1fbf9
+12	48	1765161766546086810	App_PPOA_autogen/timestamp	bb9ebfabf9542809
+12	48	1765161766546086810	App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+12	48	1765161766546086810	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/timestamp	bb9ebfabf9542809
+12	48	1765161766546086810	/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/build/Qt_6_10_0_for_macOS-Debug/App_PPOA_autogen/mocs_compilation.cpp	bb9ebfabf9542809
+48	727	1765161766581643857	CMakeFiles/App_PPOA.dir/Mainwindow.cpp.o	40da9eb4a7f5b601
+48	851	1765161766581732858	CMakeFiles/App_PPOA.dir/Login.cpp.o	77e89c3080b1f1b3
+48	874	1765161766581516273	CMakeFiles/App_PPOA.dir/main.cpp.o	6ebedf15cd076a58
+48	932	1765161766581814859	CMakeFiles/App_PPOA.dir/Mainwindow1.cpp.o	8f22e5f35d26e783
+48	960	1765161766581897734	CMakeFiles/App_PPOA.dir/Mainwindow2.cpp.o	a438833317f1fbf9
+960	1114	1765161767494128059	App_PPOA.app/Contents/MacOS/App_PPOA	cc59e78e14dd7df1
