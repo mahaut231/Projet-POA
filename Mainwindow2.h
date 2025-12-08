@@ -23,6 +23,9 @@ public:
     explicit MainWindow2(QWidget *parent = nullptr);
     ~MainWindow2();
 
+signals:
+    void deconnexionDemandee();
+
 private:
     Ui::MainWindow2 *ui;
     Centrale* centraleActuelle;
@@ -31,6 +34,7 @@ private:
     QGraphicsView* vuePuissance;
     QLabel* labelCentrale;
     QPushButton* boutonChangerDebit;
+    QPushButton* boutonDeconnexion;
 
     QLineEdit* champsDebit[5];
     QLabel* labelsDebit[5];
@@ -45,6 +49,7 @@ private:
     void afficherGraphiquePuissanceTotale();
     void creerChampsDebit();
     void creerBoutonChangerDebit();
+    void creerBoutonDeconnexion();
 
     QGraphicsScene* creerGraphiqueTurbine(Turbine* turbine, int numeroTurbine, QColor couleur);
     QGraphicsScene* creerGraphiquePuissanceTotale();
@@ -59,6 +64,7 @@ private:
 private slots:
     void mettreAJourGraphique();
     void appliquerChangementsDebit();
+    void deconnecter();
 };
 
 #endif // MAINWINDOW2_H

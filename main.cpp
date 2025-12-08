@@ -22,11 +22,11 @@
 
 int main(int argc, char *argv[]) {
 
-    QApplication app(argc, argv);  // <-- Une seule instance QApplication
+    QApplication app(argc, argv);
 
-    // ================== CODE TERMINAL EXISTANT ==================
+    // ================== INITIALISATION DES CENTRALES ==================
     qDebug() << "\n========================================";
-    qDebug() << "     TEST CHARGEMENT ET COMPARAISON     ";
+    qDebug() << "     INITIALISATION DES CENTRALES       ";
     qDebug() << "========================================\n";
 
     QString fichier = "/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/DataProjet2025.csv";
@@ -38,13 +38,14 @@ int main(int argc, char *argv[]) {
     Capteur* capteurT4Base = new Capteur(23, 147, "Bon");
     Capteur* capteurT5Base = new Capteur(24, 160, "Bon");
 
-    // Création des turbines SANS débits initiaux (0 par défaut)
+    // Création des turbines pour Centrale 1
     Turbine* turbine1 = new Turbine(1, 0, false, "2020-01-01", *capteurT1Base);
     Turbine* turbine2 = new Turbine(2, 0, false, "2020-01-01", *capteurT2Base);
     Turbine* turbine3 = new Turbine(3, 0, false, "2020-01-01", *capteurT3Base);
     Turbine* turbine4 = new Turbine(4, 0, false, "2020-01-01", *capteurT4Base);
     Turbine* turbine5 = new Turbine(5, 0, false, "2020-01-01", *capteurT5Base);
 
+    // Création des turbines pour Centrale 2 (partage les mêmes capteurs)
     Turbine* turbine1b = new Turbine(1, 0, false, "2020-01-01", *capteurT1Base);
     Turbine* turbine2b = new Turbine(2, 0, false, "2020-01-01", *capteurT2Base);
     Turbine* turbine3b = new Turbine(3, 0, false, "2020-01-01", *capteurT3Base);
@@ -57,13 +58,12 @@ int main(int argc, char *argv[]) {
     Capteur capteurAmont(1, 137890, "Bon");
     Capteur capteurAval(2, 103550, "Bon");
     Reservoire reservoire(1, capteurAmont, capteurAval);
-    Reservoire reservoire2(1, capteurAmont, capteurAval);
+    Reservoire reservoire2(2, capteurAmont, capteurAval);
 
-    Centrale* centrale = new Centrale(1, 137.90, 103.77, turbines, reservoire);
+    Centrale* centrale1 = new Centrale(1, 137.90, 103.77, turbines, reservoire);
     Centrale* centrale2 = new Centrale(2, 137.90, 103.77, turbines2, reservoire2);
 
-
-    qDebug() << "Centrale creee avec 5 turbines";
+    qDebug() << "Centrales creees avec 5 turbines chacune";
     qDebug() << "Hauteur de chute:" << (137.90 - 103.77) << "m\n";
 
     // Charger les débits
@@ -79,59 +79,127 @@ int main(int argc, char *argv[]) {
     int nbLignes = ChargeurCSV::getNombreLignes(fichier);
     qDebug() << "Nombre total de lignes:" << nbLignes << "\n";
 
-    // NOUVEAU : Synchroniser les débits des turbines avec la dernière valeur du CSV
+    // Synchroniser les débits des turbines avec la dernière valeur du CSV
     qDebug() << "--- INITIALISATION DES DEBITS DEPUIS LE CSV ---";
     for (size_t t = 0; t < turbines.size(); t++) {
         std::vector<MesureHistorique> historique = turbines[t]->getCapteur().getHistorique();
         if (!historique.empty()) {
             long dernierDebit = historique.back().valeur;
             turbines[t]->setdebits(dernierDebit);
+            turbines2[t]->setdebits(dernierDebit);
             qDebug() << "Turbine" << (t+1) << "initialisee avec debit:" << dernierDebit << "m³/s";
         }
     }
-    qDebug() << "";
+    while (true) {
+        Login loginDialog;
 
-    // Afficher mesures par capteur
-    qDebug() << "--- MESURES CHARGEES DANS LES CAPTEURS ---";
-    qDebug() << "Capteur Turbine 1:" << capteurT1Base->getNombreMesures() << "mesures";
-    qDebug() << "Capteur Turbine 2:" << capteurT2Base->getNombreMesures() << "mesures";
-    qDebug() << "Capteur Turbine 3:" << capteurT3Base->getNombreMesures() << "mesures";
-    qDebug() << "Capteur Turbine 4:" << capteurT4Base->getNombreMesures() << "mesures";
-    qDebug() << "Capteur Turbine 5:" << capteurT5Base->getNombreMesures() << "mesures";
+        if (loginDialog.exec() == QDialog::Accepted) {
+            QString centraleRef = loginDialog.getCentraleReference();
 
-    // Comparaison ligne 0
-    int ligneAComparer = 0;
-    qDebug() << "\n========================================";
-    qDebug() << "   COMPARAISON LIGNE" << ligneAComparer;
-    qDebug() << "========================================\n";
+            qDebug() << "Connexion reussie !";
+            qDebug() << "Centrale assignee:" << centraleRef;
 
-    ComparaisonLigne comp = ChargeurCSV::comparerLigne(fichier, ligneAComparer, centrale);
+            if (centraleRef == "1") {
+                qDebug() << "Ouverture de MainWindow1 (Centrale 1)";
+                MainWindow1 w1(centrale1);
 
-    ChargeurCSV::afficherComparaison(comp, ligneAComparer);
+                // Variable pour savoir si on se déconnecte ou si on quitte
+                bool seDeconnecter = false;
 
-    qDebug() << "\n========================================";
-    qDebug() << "              FIN DU TEST               ";
-    qDebug() << "========================================\n";
+                // Connecter le signal de déconnexion
+                QObject::connect(&w1, &MainWindow1::deconnexionDemandee, [&]() {
+                    qDebug() << "Deconnexion demandee";
+                    seDeconnecter = true;
+                    QApplication::quit();  // Sort de app.exec()
+                });
 
-    MainWindow1 w1(centrale);
-     w1.show();
-    MainWindow2 w2(centrale2);
-     w2.show();
+                w1.show();
+                app.exec();  // Bloque ici jusqu'à QApplication::quit()
 
-    int ret = app.exec();
+                // Si on s'est déconnecté, on continue la boucle (retour au login)
+                if (seDeconnecter) {
+                    qDebug() << "Retour au login...";
+                    continue;  // Retour au début de la boucle while(true)
+                } else {
+                    // Sinon, l'utilisateur a fermé la fenêtre = quitter l'app
+                    qDebug() << "Fermeture de l'application";
+                    break;  // Sort de la boucle
+                }
 
-    // ----- nettoyage après fermeture de la fenêtre -----
+            } else if (centraleRef == "2") {
+                qDebug() << "Ouverture de MainWindow2 (Centrale 2)";
+                MainWindow2 w2(centrale2);
+
+                bool seDeconnecter = false;
+
+                QObject::connect(&w2, &MainWindow2::deconnexionDemandee, [&]() {
+                    qDebug() << "Deconnexion demandee";
+                    seDeconnecter = true;
+                    QApplication::quit();
+                });
+
+                w2.show();
+                app.exec();
+
+                if (seDeconnecter) {
+                    qDebug() << "Retour au login...";
+                    continue;
+                } else {
+                    qDebug() << "Fermeture de l'application";
+                    break;
+                }
+
+            } else {
+                qDebug() << "Centrale inconnue, ouverture de Centrale 1 par defaut";
+                MainWindow1 w1(centrale1);
+
+                bool seDeconnecter = false;
+
+                QObject::connect(&w1, &MainWindow1::deconnexionDemandee, [&]() {
+                    qDebug() << "Deconnexion demandee";
+                    seDeconnecter = true;
+                    QApplication::quit();
+                });
+
+                w1.show();
+                app.exec();
+
+                if (seDeconnecter) {
+                    qDebug() << "Retour au login...";
+                    continue;
+                } else {
+                    qDebug() << "Fermeture de l'application";
+                    break;
+                }
+            }
+
+        } else {
+            // Login annulé
+            qDebug() << "Login annule";
+            break;  // Sort de la boucle = quitte l'application
+        }
+    }
+
+    // Cleanup final
+    qDebug() << "Nettoyage des ressources...";
     delete turbine1;
     delete turbine2;
     delete turbine3;
     delete turbine4;
     delete turbine5;
+    delete turbine1b;
+    delete turbine2b;
+    delete turbine3b;
+    delete turbine4b;
+    delete turbine5b;
     delete capteurT1Base;
     delete capteurT2Base;
     delete capteurT3Base;
     delete capteurT4Base;
     delete capteurT5Base;
-    delete centrale;
+    delete centrale1;
+    delete centrale2;
 
-    return ret;
+    qDebug() << "Application terminee";
+    return 0;
 }

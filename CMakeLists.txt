@@ -58,6 +58,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(App_PPOA
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        mainwindowmanager.h mainwindowmanager.cpp mainwindowmanager.ui
     )
 else()
     if(ANDROID)

@@ -24,6 +24,7 @@ MainWindow2::MainWindow2(QWidget *parent)
     , boutonChangerDebit(nullptr)
     , vuePuissance(nullptr)
     , debitsModifies(false)
+    , boutonDeconnexion(nullptr)
 
 {
     ui->setupUi(this);
@@ -43,6 +44,7 @@ MainWindow2::MainWindow2(Centrale* centrale, QWidget *parent)
     , boutonChangerDebit(nullptr)
     , vuePuissance(nullptr)
     , debitsModifies(false)
+    , boutonDeconnexion(nullptr)
 {
     ui->setupUi(this);
 
@@ -117,6 +119,7 @@ MainWindow2::MainWindow2(Centrale* centrale, QWidget *parent)
 
     creerChampsDebit();
     creerBoutonChangerDebit();
+    creerBoutonDeconnexion();
 
     connect(timer, &QTimer::timeout, this, &MainWindow2::mettreAJourGraphique);
     timer->start(900000);
@@ -137,6 +140,9 @@ MainWindow2::~MainWindow2()
     }
     if (boutonChangerDebit) {
         delete boutonChangerDebit;
+    }
+    if (boutonDeconnexion) {
+        delete boutonDeconnexion;
     }
     for (int i = 0; i < 5; i++) {
         if (champsDebit[i]) delete champsDebit[i];
@@ -912,4 +918,37 @@ float MainWindow2::fonctionT5(float du, float hc)
     float p00 = -212.1, p10 = 12.17, p01 = 0.004397, p11 = -0.006808, p20 = -0.1746;
     float p02 = 0.004529, p12 = -4.211*pow(10, -5), p21 = 0.0002936, p03 = -1.176*pow(10, -5);
     return p00 + p10*hc + p01*du + p11*hc*du + p20*pow(hc, 2) + p02*pow(du, 2) + p21*du*pow(hc, 2) + p12*hc*pow(du, 2) + p03*pow(du, 3);
+}
+
+void MainWindow2::creerBoutonDeconnexion()
+{
+    boutonDeconnexion = new QPushButton("Se déconnecter", ui->centralwidget);
+    boutonDeconnexion->setGeometry(850, 790, 200, 50);
+    boutonDeconnexion->setStyleSheet(
+        "QPushButton { "
+        "background-color: #e74c3c; "
+        "color: white; "
+        "border: none; "
+        "border-radius: 8px; "
+        "font-size: 14px; "
+        "font-weight: bold; "
+        "padding: 10px; "
+        "}"
+        "QPushButton:hover { "
+        "background-color: #c0392b; "
+        "}"
+        "QPushButton:pressed { "
+        "background-color: #a93226; "
+        "}"
+        );
+    boutonDeconnexion->show();
+
+    connect(boutonDeconnexion, &QPushButton::clicked, this, &MainWindow2::deconnecter);
+}
+
+void MainWindow2::deconnecter()
+{
+    qDebug() << "Déconnexion demandée depuis MainWindow2";
+    emit deconnexionDemandee();
+    close();  // Ferme la fenêtre MainWindow2
 }

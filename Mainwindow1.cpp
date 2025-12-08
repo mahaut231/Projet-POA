@@ -20,6 +20,8 @@ MainWindow1::MainWindow1(QWidget *parent)
     , timer(new QTimer(this))
     , labelCentrale(nullptr)
     , boutonChangerDebit(nullptr)
+    , boutonDeconnexion(nullptr)
+
 {
     ui->setupUi(this);
 
@@ -36,6 +38,8 @@ MainWindow1::MainWindow1(Centrale* centrale, QWidget *parent)
     , timer(new QTimer(this))
     , labelCentrale(nullptr)
     , boutonChangerDebit(nullptr)
+    , boutonDeconnexion(nullptr)
+
 {
     ui->setupUi(this);
 
@@ -64,6 +68,7 @@ MainWindow1::MainWindow1(Centrale* centrale, QWidget *parent)
     creerChampsDebit();
 
     creerBoutonChangerDebit();
+    creerBoutonDeconnexion();
 
     connect(timer, &QTimer::timeout, this, &MainWindow1::mettreAJourGraphique);
     timer->start(900000); // 15 minutes en millisecondes
@@ -82,6 +87,9 @@ MainWindow1::~MainWindow1()
     }
     if (boutonChangerDebit) {
         delete boutonChangerDebit;
+    }
+    if (boutonDeconnexion) {
+        delete boutonDeconnexion;
     }
     for (int i = 0; i < 5; i++) {
         if (champsDebit[i]) delete champsDebit[i];
@@ -741,4 +749,35 @@ float MainWindow1::fonctionT5(float du, float hc)
     return p00 + p10*hc + p01*du + p11*hc*du + p20*pow(hc, 2) + p02*pow(du, 2) + p21*du*pow(hc, 2) + p12*hc*pow(du, 2) + p03*pow(du, 3);
 }
 
+void MainWindow1::creerBoutonDeconnexion()
+{
+    boutonDeconnexion = new QPushButton("Se déconnecter", ui->centralwidget);
+    boutonDeconnexion->setGeometry(850, 790, 200, 50);
+    boutonDeconnexion->setStyleSheet(
+        "QPushButton { "
+        "background-color: #e74c3c; "
+        "color: white; "
+        "border: none; "
+        "border-radius: 8px; "
+        "font-size: 14px; "
+        "font-weight: bold; "
+        "padding: 10px; "
+        "}"
+        "QPushButton:hover { "
+        "background-color: #c0392b; "
+        "}"
+        "QPushButton:pressed { "
+        "background-color: #a93226; "
+        "}"
+        );
+    boutonDeconnexion->show();
 
+    connect(boutonDeconnexion, &QPushButton::clicked, this, &MainWindow1::deconnecter);
+}
+
+void MainWindow1::deconnecter()
+{
+    qDebug() << "Déconnexion demandée depuis MainWindow1";
+    emit deconnexionDemandee();
+    close();  // Ferme la fenêtre MainWindow1
+}

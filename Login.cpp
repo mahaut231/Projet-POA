@@ -6,7 +6,6 @@
 #include <QMessageBox>
 #include <QDebug>
 
-// Fonction pour charger les utilisateurs depuis le fichier txt
 QList<Utilisateur> chargerUtilisateursTxt(const QString& fichier)
 {
     QList<Utilisateur> liste;
@@ -24,7 +23,6 @@ QList<Utilisateur> chargerUtilisateursTxt(const QString& fichier)
 
         QStringList champs = ligne.split(";");
         if (champs.size() == 4) {
-            // Utiliser le constructeur au lieu d'accéder directement aux attributs
             int id = champs[0].toInt();
             QString login = champs[1];
             QString password = champs[2];
@@ -38,7 +36,6 @@ QList<Utilisateur> chargerUtilisateursTxt(const QString& fichier)
     return liste;
 }
 
-// Variable globale pour stocker les utilisateurs
 QList<Utilisateur> listeUtilisateurs;
 
 Login::Login(QWidget *parent)
@@ -47,10 +44,8 @@ Login::Login(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Charger les utilisateurs depuis le fichier txt
-    listeUtilisateurs = chargerUtilisateursTxt("../../ListeUtilisateurs.txt");
+    listeUtilisateurs = chargerUtilisateursTxt("/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/ListeUtilisateurs.txt");
 
-    // Connexion du bouton login
     connect(ui->LoginButton, &QPushButton::clicked, this, &Login::handleLogin);
 }
 
@@ -59,27 +54,22 @@ Login::~Login()
     delete ui;
 }
 
-// Fonction pour gérer le login
 void Login::handleLogin()
 {
     QString saisieLogin = ui->idText->text();
     QString saisiePassword = ui->passwordText->text();
 
     for (const Utilisateur& u : listeUtilisateurs) {
-        // Utiliser les getters au lieu d'accéder directement aux attributs
         if (u.getLogin() == saisieLogin && u.getPassword() == saisiePassword) {
-            // Stocker la centrale de l'utilisateur pour récupérer après
             centraleConnectee = u.getCentraleReference();
-            accept(); // ferme le dialogue et retourne QDialog::Accepted
+            accept();
             return;
         }
     }
 
-    // Si aucun utilisateur ne correspond
     QMessageBox::warning(this, "Erreur", "Login ou mot de passe incorrect !");
 }
 
-// Getter pour récupérer la centrale de l'utilisateur connecté
 QString Login::getCentraleReference() const
 {
     return centraleConnectee;

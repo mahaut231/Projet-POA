@@ -28,6 +28,10 @@ public:
 private slots:
     void mettreAJourGraphique();
     void appliquerChangementsDebit();
+    void deconnecter();
+
+signals:
+    void deconnexionDemandee();
 
 private:
     Ui::MainWindow1 *ui;
@@ -37,16 +41,17 @@ private:
     QList<QGraphicsView*> vuesGraphiques;
     QGraphicsView* vuePuissance = nullptr;
 
-    // Champs de saisie pour les débits
     QLineEdit* champsDebit[5];
     QLabel* labelsDebit[5];
     QPushButton* boutonChangerDebit;
+    QPushButton* boutonDeconnexion;
 
     void initialiserDonneesHistoriques();
     void afficherGraphiquesDebits();
     void afficherGraphiquePuissanceTotale();
     void creerChampsDebit();
     void creerBoutonChangerDebit();
+    void creerBoutonDeconnexion();
 
     QGraphicsScene* creerGraphiqueTurbine(Turbine* turbine, int numeroTurbine, QColor couleur);
     QGraphicsScene* creerGraphiquePuissanceTotale();
