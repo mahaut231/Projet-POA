@@ -29,6 +29,8 @@ public:
     long getMesure() const { return mesure; }
     std::string getNiveau() const { return niveauDusure; }
     std::vector<MesureHistorique> getHistorique() const { return historique; }
+    std::vector<MesureHistorique>& getHistoriqueModifiable() { return historique; }
+
 
     // Setters
     void setid(int id) { this->id = id; }

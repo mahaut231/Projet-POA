@@ -1352,6 +1352,7 @@ App_PPOA_autogen/timestamp: \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportversion.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QCommonStyle \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
+	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsView \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLayout \

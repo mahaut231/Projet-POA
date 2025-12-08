@@ -103,8 +103,10 @@ int main(int argc, char *argv[]) {
     qDebug() << "========================================\n";
 
     // ================== AFFICHER LA FENETRE ==================
-    MainWindow1 w1(centrale);  // important : passer la centrale
-    w1.show();
+    //MainWindow1 w1(centrale);  // important : passer la centrale
+     //w1.show();
+    MainWindow2 w2(centrale);
+     w2.show();
 
     // NE PAS supprimer les objets ici, faire le cleanup après app.exec()
     int ret = app.exec();

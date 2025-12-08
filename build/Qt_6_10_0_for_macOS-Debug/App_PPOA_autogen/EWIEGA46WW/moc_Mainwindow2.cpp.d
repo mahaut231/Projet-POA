@@ -263,6 +263,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/bit_reference.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/byte.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/complex.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/deque.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/fstream.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/functional.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/ios.h \
@@ -271,7 +272,9 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/memory_resource.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/ostream.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/pair.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/queue.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/sstream.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/streambuf.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/string.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/string_view.h \
@@ -389,6 +392,8 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/basic_ostream.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/put_character_sequence.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/is_valid.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/log2.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_int_distribution.h \
@@ -468,6 +473,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_base_of.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_bounded_array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_callable.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_char_like_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_class.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_compound.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_const.h \
@@ -582,6 +588,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bit \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cctype \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
@@ -600,13 +607,17 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctime \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/execution \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/format \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
@@ -617,8 +628,12 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdbool.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/streambuf \
@@ -772,6 +787,15 @@
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_list.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h \
+  /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Capteur.h \
+  /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Centrale.h \
+  /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Reservoire.h \
+  /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Turbine.h \
+  /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/observer.h \
+  /Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/subject.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QDateTime \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QString \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/QTimer \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q17memory.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20iterator.h \
@@ -779,6 +803,7 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q20utility.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/q23utility.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qabstracteventdispatcher.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qalloc.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qanystringview.h \
@@ -789,11 +814,13 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic_cxx11.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasicatomic.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasictimer.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbindingstorage.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearray.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearraylist.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayview.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qcalendar.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qchar.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qcheckedint_impl.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qcompare.h \
@@ -808,8 +835,11 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qcontiguouscache.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdarwinhelpers.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdatastream.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdatetime.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdeadlinetimer.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qdebug.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qendian.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qeventloop.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qexceptionhandling.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qflags.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qfloat16.h \
@@ -821,12 +851,14 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qhash.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qhashfunctions.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevice.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterable.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterator.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qlatin1stringview.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qline.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qlist.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qlocale.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qlogging.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qmalloc.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qmap.h \
@@ -883,6 +915,7 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtenvironmentvariables.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtextstream.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtformat_impl.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtimer.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtnoop.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtpreprocessorsupport.h \
@@ -893,6 +926,7 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtversionchecks.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtypeinfo.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qtypes.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qurl.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
@@ -912,20 +946,41 @@
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qimage.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpainter.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpen.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextcursor.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextformat.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextoption.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsView \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLineEdit \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QPushButton \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractbutton.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractscrollarea.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsscene.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsview.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlineedit.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qpushbutton.h \
+  /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qscrollarea.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
   /Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \

@@ -740,3 +740,5 @@ float MainWindow1::fonctionT5(float du, float hc)
     float p02 = 0.004529, p12 = -4.211*pow(10, -5), p21 = 0.0002936, p03 = -1.176*pow(10, -5);
     return p00 + p10*hc + p01*du + p11*hc*du + p20*pow(hc, 2) + p02*pow(du, 2) + p21*du*pow(hc, 2) + p12*hc*pow(du, 2) + p03*pow(du, 3);
 }
+
+
