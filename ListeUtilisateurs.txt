@@ -4,3 +4,5 @@
 
 3;admin;admin123;TOUTES;Manager
 4;test3;test3;1;Utilisateur
+5;test4;test4;2;Utilisateur
+6;igzrq;PHIERUSH;1;Utilisateur

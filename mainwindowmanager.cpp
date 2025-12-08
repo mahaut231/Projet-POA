@@ -192,7 +192,6 @@ void MainWindowManager::ajouterUtilisateur()
 
     QString fichier = "/Users/mahautgalice/Desktop/Cours UQAC/S1/POO/ProjetFinal/App_PPOA/ListeUtilisateurs.txt";
 
-    // ⭐ ÉTAPE 1 : LIRE le fichier pour trouver le dernier ID
     int dernierID = 0;
     QFile fileRead(fichier);
     if (fileRead.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -212,7 +211,6 @@ void MainWindowManager::ajouterUtilisateur()
 
     int nouvelID = dernierID + 1;
 
-    // ⭐ ÉTAPE 2 : ÉCRIRE le nouvel utilisateur
     QFile fileWrite(fichier);
     if (!fileWrite.open(QIODevice::Append | QIODevice::Text)) {
         QMessageBox::critical(this, "Erreur", "Impossible d'ouvrir le fichier utilisateurs !");
@@ -227,7 +225,6 @@ void MainWindowManager::ajouterUtilisateur()
                              QString("Utilisateur '%1' ajouté avec succès !\nCentrale: %2\nID: %3")
                                  .arg(identifiant).arg(centrale).arg(nouvelID));
 
-    // Vider les champs
     champIdentifiant->clear();
     champMotDePasse->clear();
     comboCentrale->setCurrentIndex(0);
