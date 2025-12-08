@@ -1,4 +1,6 @@
-1;michel;test1;1
+1;michel;test1;1;Utilisateur
 
-2;josiane;test2;2
+2;josiane;test2;2;Utilisateur
 
+3;admin;admin123;TOUTES;Manager
+4;test3;test3;1;Utilisateur

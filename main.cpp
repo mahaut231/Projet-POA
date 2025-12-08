@@ -1,7 +1,9 @@
 #include "Login.h"
 #include "Mainwindow1.h"
 #include "Mainwindow2.h"
+#include "MainwindowManager.h"
 #include <QApplication>
+#include <QMessageBox>
 
 #include "Centrale.h"
 #include "Turbine.h"
@@ -90,40 +92,138 @@ int main(int argc, char *argv[]) {
             qDebug() << "Turbine" << (t+1) << "initialisee avec debit:" << dernierDebit << "m³/s";
         }
     }
+
+    qDebug() << "\n========================================";
+    qDebug() << "        INITIALISATION TERMINEE         ";
+    qDebug() << "========================================\n";
+
+    // ================== BOUCLE DE LOGIN ==================
     while (true) {
         Login loginDialog;
 
         if (loginDialog.exec() == QDialog::Accepted) {
             QString centraleRef = loginDialog.getCentraleReference();
+            QString role = loginDialog.getRole();
 
             qDebug() << "Connexion reussie !";
             qDebug() << "Centrale assignee:" << centraleRef;
+            qDebug() << "Role:" << role;
 
-            if (centraleRef == "1") {
+            // ========== GESTION DES MANAGERS ==========
+            if (role == "Manager") {
+                qDebug() << "Manager connecte - Affichage du menu de choix";
+
+                // Créer la boîte de dialogue de choix
+                QMessageBox choixManager;
+                choixManager.setWindowTitle("Menu Manager");
+                choixManager.setText("À quelle page voulez-vous vous connecter ?");
+                choixManager.setIcon(QMessageBox::Question);
+
+                QPushButton* btnCentrale1 = choixManager.addButton("Centrale 1", QMessageBox::ActionRole);
+                QPushButton* btnCentrale2 = choixManager.addButton("Centrale 2", QMessageBox::ActionRole);
+                QPushButton* btnGestion = choixManager.addButton("Gestion des Utilisateurs", QMessageBox::ActionRole);
+                QPushButton* btnAnnuler = choixManager.addButton("Annuler", QMessageBox::RejectRole);
+
+                choixManager.exec();
+
+                QPushButton* choix = (QPushButton*)choixManager.clickedButton();
+
+                bool seDeconnecter = false;
+
+                if (choix == btnCentrale1) {
+                    // Ouvrir Centrale 1
+                    qDebug() << "Manager a choisi Centrale 1";
+                    MainWindow1 w1(centrale1);
+
+                    QObject::connect(&w1, &MainWindow1::deconnexionDemandee, [&]() {
+                        qDebug() << "Deconnexion demandee";
+                        seDeconnecter = true;
+                        QApplication::quit();
+                    });
+
+                    w1.show();
+                    app.exec();
+
+                    if (seDeconnecter) {
+                        qDebug() << "Retour au login...";
+                        continue;
+                    } else {
+                        qDebug() << "Fermeture de l'application";
+                        break;
+                    }
+
+                } else if (choix == btnCentrale2) {
+                    // Ouvrir Centrale 2
+                    qDebug() << "Manager a choisi Centrale 2";
+                    MainWindow2 w2(centrale2);
+
+                    QObject::connect(&w2, &MainWindow2::deconnexionDemandee, [&]() {
+                        qDebug() << "Deconnexion demandee";
+                        seDeconnecter = true;
+                        QApplication::quit();
+                    });
+
+                    w2.show();
+                    app.exec();
+
+                    if (seDeconnecter) {
+                        qDebug() << "Retour au login...";
+                        continue;
+                    } else {
+                        qDebug() << "Fermeture de l'application";
+                        break;
+                    }
+
+                } else if (choix == btnGestion) {
+                    // Ouvrir Gestion des Utilisateurs
+                    qDebug() << "Manager a choisi Gestion des Utilisateurs";
+                    MainWindowManager wManager(centrale1, centrale2);
+
+                    QObject::connect(&wManager, &MainWindowManager::deconnexionDemandee, [&]() {
+                        qDebug() << "Deconnexion demandee";
+                        seDeconnecter = true;
+                        QApplication::quit();
+                    });
+
+                    wManager.show();
+                    app.exec();
+
+                    if (seDeconnecter) {
+                        qDebug() << "Retour au login...";
+                        continue;
+                    } else {
+                        qDebug() << "Fermeture de l'application";
+                        break;
+                    }
+
+                } else {
+                    // Annuler - retour au login
+                    qDebug() << "Manager a annule le choix - retour au login";
+                    continue;
+                }
+            }
+            // ========== GESTION DES UTILISATEURS NORMAUX ==========
+            else if (centraleRef == "1") {
                 qDebug() << "Ouverture de MainWindow1 (Centrale 1)";
                 MainWindow1 w1(centrale1);
 
-                // Variable pour savoir si on se déconnecte ou si on quitte
                 bool seDeconnecter = false;
 
-                // Connecter le signal de déconnexion
                 QObject::connect(&w1, &MainWindow1::deconnexionDemandee, [&]() {
                     qDebug() << "Deconnexion demandee";
                     seDeconnecter = true;
-                    QApplication::quit();  // Sort de app.exec()
+                    QApplication::quit();
                 });
 
                 w1.show();
-                app.exec();  // Bloque ici jusqu'à QApplication::quit()
+                app.exec();
 
-                // Si on s'est déconnecté, on continue la boucle (retour au login)
                 if (seDeconnecter) {
                     qDebug() << "Retour au login...";
-                    continue;  // Retour au début de la boucle while(true)
+                    continue;
                 } else {
-                    // Sinon, l'utilisateur a fermé la fenêtre = quitter l'app
                     qDebug() << "Fermeture de l'application";
-                    break;  // Sort de la boucle
+                    break;
                 }
 
             } else if (centraleRef == "2") {
@@ -176,7 +276,7 @@ int main(int argc, char *argv[]) {
         } else {
             // Login annulé
             qDebug() << "Login annule";
-            break;  // Sort de la boucle = quitte l'application
+            break;
         }
     }
 

@@ -16,15 +16,16 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
-    // Getter pour récupérer la centrale de l'utilisateur connecté
     QString getCentraleReference() const;
+    QString getRole() const;
 
 private slots:
-    void handleLogin();  // fonction appelée quand on clique sur le bouton
+    void handleLogin();
 
 private:
     Ui::Login *ui;
-    QString centraleConnectee; // centrale de l'utilisateur connecté
+    QString centraleConnectee;
+    QString roleConnecte;
 };
 
 #endif // LOGIN_H

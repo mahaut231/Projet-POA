@@ -22,7 +22,7 @@ QList<Utilisateur> chargerUtilisateursTxt(const QString& fichier)
             continue;
 
         QStringList champs = ligne.split(";");
-        if (champs.size() == 4) {
+        if (champs.size() >= 4) {
             int id = champs[0].toInt();
             QString login = champs[1];
             QString password = champs[2];
@@ -62,6 +62,15 @@ void Login::handleLogin()
     for (const Utilisateur& u : listeUtilisateurs) {
         if (u.getLogin() == saisieLogin && u.getPassword() == saisiePassword) {
             centraleConnectee = u.getCentraleReference();
+
+            if (u.getCentraleReference() == "TOUTES") {
+                roleConnecte = "Manager";
+            } else {
+                roleConnecte = "Utilisateur";
+            }
+
+            qDebug() << "Login reussi:" << saisieLogin << "Role:" << roleConnecte << "Centrale:" << centraleConnectee;
+
             accept();
             return;
         }
@@ -73,4 +82,9 @@ void Login::handleLogin()
 QString Login::getCentraleReference() const
 {
     return centraleConnectee;
+}
+
+QString Login::getRole() const
+{
+    return roleConnecte;
 }

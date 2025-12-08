@@ -779,5 +779,5 @@ void MainWindow1::deconnecter()
 {
     qDebug() << "Déconnexion demandée depuis MainWindow1";
     emit deconnexionDemandee();
-    close();  // Ferme la fenêtre MainWindow1
+    close();
 }

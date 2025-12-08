@@ -890,6 +890,8 @@ App_PPOA_autogen/timestamp: \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/gestionnairecomptes.cpp \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/gestionnairecomptes.h \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/main.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/mainwindowmanager.cpp \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/mainwindowmanager.h \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/manager.cpp \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/manager.h \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/observer.h \
@@ -1350,6 +1352,7 @@ App_PPOA_autogen/timestamp: \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportexports.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportglobal.h \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportversion.h \
+	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QComboBox \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QCommonStyle \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
 	/Users/mahautgalice/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene \
@@ -1740,4 +1743,5 @@ App_PPOA_autogen/timestamp: \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow.ui \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow1.ui \
 	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/Mainwindow2.ui \
+	/Users/mahautgalice/Desktop/Cours\ UQAC/S1/POO/ProjetFinal/App_PPOA/MainwindowManager.ui \
 	/Users/mahautgalice/Qt/Tools/CMake/CMake.app/Contents/bin/cmake
